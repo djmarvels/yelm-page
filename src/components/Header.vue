@@ -9,7 +9,8 @@
         a.navbar-menu__link= item
   .navbar-actions
     a.navbar-actions__link Войти
-    button.navbar-actions__link Попробовать бесплатно
+    button.btn.btn--border_gradient_blue.navbar-actions__button
+      span Попробовать бесплатно
 </template>
 
 <script>
