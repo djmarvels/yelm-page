@@ -9,7 +9,15 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "dot-prop": "^6.0.1",
+    "normalize-scss": "^7.0.1",
+    "normalize.css": "^8.0.1",
+    "normalize.scss": "^0.1.0",
+    "pug-plain-loader": "^1.1.0",
+    "raw-loader": "^4.0.2",
     "sass-loader": "7.3.1",
+    "showdown": "^1.9.1",
+    "template-html-loader": "^1.0.0",
     "vue": "^3.0.0"
   },
   "devDependencies": {
@@ -20,7 +28,9 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^7.0.0-0",
-    "sass": "^1.32.7"
+    "pug": "^3.0.0",
+    "sass": "^1.32.7",
+    "vue-cli-plugin-pug": "~2.0.0"
   },
   "eslintConfig": {
     "root": true,
