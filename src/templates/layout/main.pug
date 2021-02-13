@@ -1,0 +1,25 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        title Yelm
+    body
+        canvas#canvas
+            svg#blot(xmlns="http://www.w3.org/2000/svg")
+                defs
+                    filter#goo
+                        feGaussianBlur(in="SourceGraphic", result="blur", stdDeviation="12")
+                        feColorMatrix(in="blur", mode="matrix", values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7", result="joint")
+        .navbar.navbar--fixed.navbar--backdrop
+            a.navbar-brand(href="#!")
+                span.text.text--black.text--medium Конструктор мобильных приложений
+            - const navbar_items = [ 'О нас', 'Кейсы', 'Возможности', 'Интеграции', 'Блог', 'Цены', 'F.A.Q', 'Контакты' ];
+            ul.navbar-menu
+                each navbar_item in navbar_items
+                    li.navbar-menu__item
+                        a(href="#!").navbar-menu__link.text.text--black.text--medium=navbar_item
+            .navbar-actions
+                a(href="#!").navbar-actions__link.text.text--black.text--medium  Войти
+                button.button.button--gradient_border
+                    span Зарегистрироваться
+        block content

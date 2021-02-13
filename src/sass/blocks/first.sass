@@ -1,0 +1,72 @@
+.offer
+  margin-top: 199px
+  position: relative
+  z-index: 2
+  &-title
+    font-style: normal
+    font-weight: 350
+    font-size: 56px
+    line-height: 66px
+    color: $black
+    margin-top: 0
+    margin-bottom: 0
+    b
+      display: block
+      font-style: normal
+      font-weight: bold
+      font-size: 56px
+      line-height: 72px
+      text-decoration-line: underline
+      color: $black
+  &-subtitle
+    margin-top: 50px
+    font-style: normal
+    font-weight: 350
+    font-size: 16px
+    line-height: 19px
+    color: $black
+  .button
+    margin-top: 50px
+
+.first
+  &-screen
+    position: relative
+  &-illustration
+    position: absolute
+    width: 100%
+    height: 100%
+    top: -100px
+    left: 0
+    overflow: hidden
+    z-index: 1
+
+.illustration
+  &-glossy
+    display: flex
+    align-items: center
+    justify-content: center
+    position: absolute
+    &::before
+      content: ''
+      display: block
+      background-repeat: no-repeat
+      background-position: 50%
+    &--one
+      @include only-width(91.88px)
+      @include only-height(91.88px)
+      left: 438px
+      top: 34px
+      &::before
+        background-image: url('../images/design/first/glossy-one.svg')
+        @include only-width(104px)
+        @include only-height(104px)
+    &--two
+      @include only-width(122.61px)
+      @include only-height(122.61px)
+      top: 13px
+      left: auto
+      right: -62.45px
+      &::before
+        @include only-width(174px)
+        @include only-height(174px)
+        background-image: url('../images/design/first/glossy-two.svg')

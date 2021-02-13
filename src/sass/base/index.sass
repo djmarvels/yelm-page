@@ -1,0 +1,28 @@
+@import "fonts"
+@import "variables"
+@import "mixins"
+@import "~normalize.scss"
+@import "~bootstrap/scss/bootstrap-grid"
+
+body
+  font-family: 'Stem', sans-serif
+a
+  text-decoration: none
+  &:hover
+    text-decoration: none
+
+.page
+  padding-top: 100px
+
+#canvas
+  filter: url("#goo")
+  height: 100%
+  width: 100%
+  position: fixed
+  top: 0
+  left: 0
+  z-index: -1
+
+#blot
+  height: 0
+  width: 0

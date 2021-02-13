@@ -1,0 +1,30 @@
+.text
+  font-style: normal
+  font-size: 16px
+  line-height: 20px
+  &--medium
+    font-weight: 500
+  &--black
+    color: $black
+  &--blue
+    color: $blue
+
+  &--hover
+    &_link
+      position: relative
+      transition: color 350ms
+      &::after
+        content: ''
+        display: block
+        width: 0px
+        height: 2px
+        background-color: $blue
+        opacity: 1
+        transition: width 300ms 0s linear
+        margin-top: 2px
+        position: absolute
+      &:hover
+        color: $blue
+        &::after
+          opacity: 1
+          width: 100%

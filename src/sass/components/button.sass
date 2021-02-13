@@ -1,0 +1,108 @@
+.button
+  border: 0
+  background: transparent
+  outline: none
+  display: flex
+  align-items: center
+  justify-content: center
+  position: relative
+  transition: transform, background-color 350ms
+  width: auto
+  min-width: 200px
+  padding: 0 75px
+  span
+    position: relative
+    z-index: 3
+    display: block
+    transition: color 350ms
+    @extend .text
+    @extend .text--medium
+    color: #ffffff
+  &:hover
+    background-color: rgba(0,0,0,0)
+    &::before
+      opacity: 1
+  &:active
+    transform: scale(.98)
+    &::before
+      opacity: 0
+    &::after
+      opacity: 1
+    span
+      color: #000
+  &--gradient
+    &_border
+      height: 48px
+      background-color: rgba(0, 0, 0, 0)
+      background-blend-mode: overlay
+      background-image: linear-gradient(269.1deg, #FF6463 1.32%, #FF468B 19.07%, #DD3CBC 34.66%, #B724FF 50.03%, #953AFF 65.81%, #3578FF 82.8%, #0793FF 99.01%)
+      border-radius: 30px
+      span
+        position: absolute
+        display: flex
+        align-items: center
+        justify-content: center
+        width: calc(100% - 4px)
+        height: calc(100% - 4px)
+        top: 2px
+        left: 2px
+        background-color: #fff
+        border-radius: 30px
+        color: #000
+      &:hover
+        background-color: #274DDC
+      &:active
+        background-color: #0A84FF
+    &_blue
+      background-color: $blue
+      background-image: url('../images/design/buttons/gradient_blue/default.svg')
+      background-blend-mode: color-burn
+      &::before, &::after
+        background-blend-mode: color-dodge
+      &::before
+        background-color: #2041B3
+        background-image: url('../images/design/buttons/gradient_blue/hover.svg')
+      &::after
+        background-color: #B6DBFF
+        background-image: url('../images/design/buttons/gradient_blue/active.svg')
+    &_colors
+      background-color: $blue
+      background-image: url('../images/design/buttons/gradient_colors/default.svg')
+      &::before
+        background-color: $blue
+        background-image: url('../images/design/buttons/gradient_colors/hover.svg')
+      &::after
+        background-color: $blue
+        background-image: url('../images/design/buttons/gradient_colors/active.svg')
+      &:active
+        span
+          color: #fff
+    &_blue, &_colors, &_border
+      transition: transform, background-color 350ms
+      background-repeat: no-repeat
+      background-position: center
+    &_blue, &_colors
+      height: 60px
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2)
+      border-radius: 20px
+      transition: transform, background-color 350ms
+      background-repeat: no-repeat
+      background-position: center
+      &::before, &::after
+        content: ''
+        display: block
+        position: absolute
+        border-radius: 20px
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
+        transition: opacity 350ms
+        background-repeat: no-repeat
+        background-position: center
+      &::before
+        opacity: 0
+        z-index: 1
+      &::after
+        opacity: 0
+        z-index: 2
