@@ -2,6 +2,7 @@ doctype html
 html(lang='en')
     head
         meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
         title Yelm
     body
         canvas#canvas
@@ -22,4 +23,6 @@ html(lang='en')
                 a(href="#!").navbar-actions__link.text.text--black.text--medium  Войти
                 button.button.button--gradient_border
                     span Зарегистрироваться
+            button.navbar-toggler
+                span
         block content

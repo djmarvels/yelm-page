@@ -6,6 +6,9 @@
 
 body
   font-family: 'Stem', sans-serif
+  @include custom-scrollbar()
+  &.hidden
+    overflow: hidden
 a
   text-decoration: none
   &:hover

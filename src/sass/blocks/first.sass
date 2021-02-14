@@ -27,6 +27,8 @@
     color: $black
   .button
     margin-top: 50px
+    span
+      font-size: 18px
 
 .first
   &-screen
@@ -35,17 +37,284 @@
     position: absolute
     width: 100%
     height: 100%
+    min-height: 994px
     top: -100px
     left: 0
     overflow: hidden
     z-index: 1
 
 .illustration
+  &-subtitle
+    font-style: normal
+    font-weight: 350
+    font-size: 16px
+    line-height: 19px
+    color: #ffffff
+    text-align: center
+  &-title
+    font-style: normal
+    font-weight: 500
+    font-size: 64px
+    line-height: 79px
+    color: #FFFFFF
+    display: flex
+    align-items: center
+    justify-content: center
+    span
+      margin-left: 4px
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 19.09px
+      height: 21px
+      position: relative
+      top: 8px
+      &::before
+        content: ''
+        display: block
+        @include only-width(21px)
+        @include only-height(21px)
+        background-image: url('../images/design/first/phone/rub.png')
+        background-position: center
+        background-repeat: no-repeat
+  &-phone
+    &__tools
+      width: 250.4px
+      height: 55.48px
+      position: absolute
+      right: -222.33px
+      left: auto
+      bottom: 105.78px
+      top: auto
+      transform: rotate(-90deg)
+      &::before
+        content: ''
+        display: block
+        @include only-width(252px)
+        @include only-height(57px)
+        background-image: url('../images/design/first/phone/tools.png')
+        background-position: center
+        background-repeat: no-repeat
+    &__card
+      width: 255.83px
+      height: 121.49px
+      position: absolute
+      top: -46.97px
+      right: -196.23px
+      left: auto
+      &::before
+        content: ''
+        display: block
+        @include only-width(256px)
+        @include only-height(155px)
+        background-image: url('../images/design/first/phone/card.png')
+        background-position: center
+        background-repeat: no-repeat
+    &__busket
+      width: 174.32px
+      height: 166.92px
+      position: absolute
+      left: 74.04px
+      top: -46.75px
+      &::before
+        content: ''
+        display: block
+        @include only-width(433px)
+        @include only-height(406px)
+        background-image: url('../images/design/first/phone/busket.png')
+        background-position: center
+        background-repeat: no-repeat
+        margin-left: -41px
+        margin-top: -17px
+      &-box
+        width: 296.9px
+        height: 205.5px
+        position: absolute
+        top: -54.22px
+        display: flex
+        align-items: center
+        justify-content: center
+        left: -203.76px
+        &::before
+          content: ''
+          display: block
+          @include only-width(299px)
+          @include only-height(207px)
+          background-image: url('../images/design/first/phone/busket-box.png')
+          background-position: center
+          background-repeat: no-repeat
+    &__cube
+      width: 200.44px
+      height: 185.81px
+      transform: rotate(-15deg)
+      top: 205.75px
+      left: -132.96px
+      position: absolute
+      &::before
+        content: ''
+        display: block
+        @include only-width(202px)
+        @include only-height(187px)
+        background-image: url('../images/design/first/phone/cube.png')
+        background-position: center
+        background-repeat: no-repeat
+    &__content
+      transform: rotate(40.39deg)
+      position: absolute
+      top: 90px
+      left: 40px
+    &__blot
+      width: 244.25px
+      height: 266.94px
+      position: absolute
+      display: flex
+      align-items: center
+      justify-content: center
+      transform: rotate(-40.39deg)
+      top: 41.35px
+      right: -65.03px
+      left: auto
+      &::before
+        content: ''
+        display: block
+        background-image: url('../images/design/first/phone/blot.png')
+        background-position: center
+        background-repeat: no-repeat
+        @include only-width(305px)
+        @include only-height(328px)
+    &__middle
+      width: 233.57px
+      height: 202.06px
+      position: absolute
+      display: flex
+      bottom: 26.64px
+      top: auto
+      &::before
+        content: ''
+        display: block
+        background-image: url('../images/design/first/phone/middle.png')
+        background-position: center
+        background-repeat: no-repeat
+        @include only-width(270px)
+        @include only-height(203px)
+    &__shadow
+      width: 289.85px
+      height: 588.75px
+      top: 0
+      left: 0
+      display: flex
+      align-items: center
+      justify-content: center
+      position: absolute
+      &::before
+        content: ''
+        display: block
+        background-image: url('../images/design/first/phone/shadow.png')
+        @include only-width(291px)
+        @include only-height(590px)
+        background-position: center
+        background-repeat: no-repeat
+    &__up
+      display: flex
+      align-items: center
+      justify-content: center
+      position: absolute
+      width: 232.88px
+      height: 302.29px
+      top: 45.66px
+      &::before
+        content: ''
+        display: block
+        @include only-width(242px)
+        @include only-height(312px)
+        background-position: center
+        background-repeat: no-repeat
+        background-image: url('../images/design/first/phone/up.png')
+      &-inner
+        display: flex
+        align-items: center
+        justify-content: center
+        position: absolute
+        width: 118.31px
+        height: 118.58px
+        &::before
+          content: ''
+          display: block
+          @include only-width(136px)
+          @include only-height(136px)
+          background-position: center
+          background-repeat: no-repeat
+          background-image: url('../images/design/first/phone/up-inner.png')
+    &__main
+      width: 289.74px
+      height: 587.92px
+      display: flex
+      align-items: flex-start
+      justify-content: center
+      top: 237.43px
+      left: auto
+      right: 273.51px
+      position: absolute
+      &::before
+        content: ''
+        display: block
+        background-position: center
+        background-repeat: no-repeat
+        background-image: url('../images/design/first/phone/main.png')
+        @include only-width(840px)
+        @include only-height(632px)
+  &-circle
+    position: absolute
+    width: 26.51px
+    height: 26.51px
+    top: 727.26px
+    background-color: $blue
+    left: calc(50% - (26.51px / 2))
+    border-radius: 50%
+    &--two
+      width: 33.14px
+      height: 34.25px
+      left: 1199px
+      top: 427px
+      background-color: #FFAA01
+    &--three
+      width: 21px
+      height: 21px
+      left: 51px
+      top: 362px
+      background-color: #F2F2F2
+  &-ellipse
+    position: absolute
+    width: 669px
+    height: 670px
+    left: 46px
+    top: 137px
+    mix-blend-mode: normal
+    border: 1px solid rgba(227, 230, 233, 0.7)
+    box-sizing: border-box
+    border-radius: 50%
+    &--two
+      width: 231px
+      height: 231px
+      left: auto
+      right: 571px
+      top: 574px
+  &-line
+    position: absolute
+    width: 1406.89px
+    height: 0
+    left: 175px
+    top: 497.68px
+    border: 1px solid rgba(227, 230, 233, 1)
+    transform: rotateZ(-135.01deg)
+    opacity: .5
+    z-index: 0
   &-glossy
     display: flex
     align-items: center
     justify-content: center
     position: absolute
+    z-index: 1
     &::before
       content: ''
       display: block
@@ -57,7 +326,7 @@
       left: 438px
       top: 34px
       &::before
-        background-image: url('../images/design/first/glossy-one.svg')
+        background-image: url('../images/design/first/glossy-one.png')
         @include only-width(104px)
         @include only-height(104px)
     &--two
@@ -69,4 +338,4 @@
       &::before
         @include only-width(174px)
         @include only-height(174px)
-        background-image: url('../images/design/first/glossy-two.svg')
+        background-image: url('../images/design/first/glossy-two.png')
