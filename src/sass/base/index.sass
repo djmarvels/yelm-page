@@ -16,6 +16,8 @@ a
 
 .page
   padding-top: 100px
+  @media (max-width: 1199px)
+    padding-top: 70px
 
 #canvas
   filter: url("#goo")
@@ -29,3 +31,11 @@ a
 #blot
   height: 0
   width: 0
+
+.view
+  &--lg
+    @media (max-width: 1199px)
+      display: none
+  &--md
+    @media (min-width: 1200px)
+      display: none

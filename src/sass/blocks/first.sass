@@ -2,6 +2,12 @@
   margin-top: 199px
   position: relative
   z-index: 2
+  @media (max-width: 1199px) and (min-width: 768px)
+    margin-top: 123px
+  @media (max-width: 767px) and (min-width: 576px)
+    margin-top: 64px
+  @media (max-width: 575px)
+    margin-top: 119px
   &-title
     font-style: normal
     font-weight: 350
@@ -18,6 +24,21 @@
       line-height: 72px
       text-decoration-line: underline
       color: $black
+    @media (max-width: 1199px)
+      font-size: 48px
+      line-height: 60px
+      max-width: 530px
+      b
+        white-space: nowrap
+        font-size: 48px
+        line-height: 60px
+    @media (max-width: 767px)
+      font-size: 24px
+      line-height: 35px
+      max-width: 285px
+      b
+        font-size: 24px
+        line-height: 35px
   &-subtitle
     margin-top: 50px
     font-style: normal
@@ -25,11 +46,19 @@
     font-size: 16px
     line-height: 19px
     color: $black
+    @media (max-width: 1199px)
+      margin-top: 32px
+      font-size: 14px
+      line-height: 20px
+    @media (max-width: 767px)
+      max-width: 220px
   .button
     margin-top: 50px
     span
-      font-size: 18px
-
+      @media (min-width: 768px)
+        font-size: 18px
+    @media (max-width: 1199px)
+      margin-top: 32px
 .first
   &-screen
     position: relative
@@ -47,36 +76,68 @@
   &-subtitle
     font-style: normal
     font-weight: 350
-    font-size: 16px
-    line-height: 19px
     color: #ffffff
     text-align: center
+    @media (min-width: 1200px)
+      font-size: 16px
+      line-height: 19px
+    @media (max-width: 1199px) and (min-width: 576px)
+      font-size: 18px
+      line-height: 21px
+      position: relative
+      top: -10px
+    @media (max-width: 575px)
+      font-size: 12px
+      line-height: 14px
+      top: -5px
+      position: relative
   &-title
     font-style: normal
     font-weight: 500
-    font-size: 64px
-    line-height: 79px
     color: #FFFFFF
     display: flex
     align-items: center
     justify-content: center
+    @media (min-width: 1200px)
+      font-size: 64px
+      line-height: 79px
+    @media (max-width: 1199px) and (min-width: 576px)
+      font-size: 48px
+      line-height: 60px
+    @media (max-width: 575px)
+      font-size: 34px
+      line-height: 42px
     span
-      margin-left: 4px
       display: flex
       align-items: center
       justify-content: center
       width: 19.09px
       height: 21px
       position: relative
-      top: 8px
+      @media (min-width: 1200px)
+        margin-left: 4px
+        top: 8px
+      @media (max-width: 1199px) and (min-width: 576px)
+        margin-left: 2px
+        top: 5px
+      @media (max-width: 575px)
+        margin-left: 1px
+        top: 6px
+        width: 10px
+        height: 10px
       &::before
         content: ''
         display: block
-        @include only-width(21px)
-        @include only-height(21px)
         background-image: url('../images/design/first/phone/rub.png')
         background-position: center
         background-repeat: no-repeat
+        @media (min-width: 576px)
+          @include only-width(21px)
+          @include only-height(21px)
+        @media (max-width: 575px)
+          @include only-width(10px)
+          @include only-height(10px)
+          background-size: cover
   &-phone
     &__tools
       width: 250.4px
@@ -87,6 +148,8 @@
       bottom: 105.78px
       top: auto
       transform: rotate(-90deg)
+      @media (max-width: 1350px)
+        display: none
       &::before
         content: ''
         display: block
@@ -102,6 +165,12 @@
       top: -46.97px
       right: -196.23px
       left: auto
+      @media (max-width: 1660px) and (min-width: 1200px)
+        left: -165px
+        right: auto
+        top: -25px
+      @media (max-width: 1199px)
+        display: none
       &::before
         content: ''
         display: block
@@ -116,6 +185,8 @@
       position: absolute
       left: 74.04px
       top: -46.75px
+      @media (max-width: 1660px)
+        display: none
       &::before
         content: ''
         display: block
@@ -135,6 +206,8 @@
         align-items: center
         justify-content: center
         left: -203.76px
+        @media (max-width: 1660px)
+          display: none
         &::before
           content: ''
           display: block
@@ -150,6 +223,8 @@
       top: 205.75px
       left: -132.96px
       position: absolute
+      @media (max-width: 1199px)
+        display: none
       &::before
         content: ''
         display: block
@@ -159,29 +234,58 @@
         background-position: center
         background-repeat: no-repeat
     &__content
-      transform: rotate(40.39deg)
       position: absolute
-      top: 90px
-      left: 40px
+      @media (min-width: 1200px)
+        top: 90px
+        left: 40px
+        transform: rotate(40.39deg)
+      @media (max-width: 1199px) and (min-width: 576px)
+        top: auto
+        left: 33.47px
+        bottom: 105px
+      @media (max-width: 575px)
+        bottom: 39.05px
+        top: auto
+        left: 17.53px
     &__blot
-      width: 244.25px
-      height: 266.94px
       position: absolute
       display: flex
-      align-items: center
-      justify-content: center
-      transform: rotate(-40.39deg)
-      top: 41.35px
-      right: -65.03px
-      left: auto
+      @media (min-width: 1200px)
+        align-items: center
+        justify-content: center
+        transform: rotate(-40.39deg)
+        top: 41.35px
+        right: -65.03px
+        left: auto
+        width: 244.25px
+        height: 266.94px
+      @media (max-width: 1199px) and (min-width: 576px)
+        width: 182.91px
+        height: 316.67px
+        left: 0
+        top: 0
+      @media (max-width: 575px)
+        width: 111.49px
+        height: 193.05px
+        left: 0
+        top: 0
       &::before
         content: ''
         display: block
-        background-image: url('../images/design/first/phone/blot.png')
         background-position: center
         background-repeat: no-repeat
-        @include only-width(305px)
-        @include only-height(328px)
+        @media (min-width: 1200px)
+          @include only-width(305px)
+          @include only-height(328px)
+          background-image: url('../images/design/first/phone/blot.png')
+        @media (max-width: 1199px) and (min-width: 576px)
+          @include only-width(184px)
+          @include only-height(281px)
+          background-image: url('../images/design/first/phone/blot-mobile.png')
+        @media (max-width: 575px)
+          background-image: url('../images/design/first/phone/blot-mobile-sm.svg')
+          @include only-width(112px)
+          @include only-height(194px)
     &__middle
       width: 233.57px
       height: 202.06px
@@ -189,6 +293,8 @@
       display: flex
       bottom: 26.64px
       top: auto
+      @media (max-width: 1199px)
+        display: none
       &::before
         content: ''
         display: block
@@ -206,6 +312,8 @@
       align-items: center
       justify-content: center
       position: absolute
+      @media (max-width: 1199px)
+        display: none
       &::before
         content: ''
         display: block
@@ -222,6 +330,8 @@
       width: 232.88px
       height: 302.29px
       top: 45.66px
+      @media (max-width: 1199px)
+        display: none
       &::before
         content: ''
         display: block
@@ -246,15 +356,32 @@
           background-repeat: no-repeat
           background-image: url('../images/design/first/phone/up-inner.png')
     &__main
-      width: 289.74px
-      height: 587.92px
       display: flex
       align-items: flex-start
       justify-content: center
-      top: 237.43px
-      left: auto
-      right: 273.51px
       position: absolute
+      @media (max-width: 1565px) and (min-width: 1351px)
+        right: 155px
+      @media (max-width: 1350px) and (min-width: 1200px)
+        right: 85px
+      @media (min-width: 1200px)
+        width: 289.74px
+        height: 587.92px
+        top: 237.43px
+        left: auto
+        right: 273.51px
+      @media (max-width: 1199px) and (min-width: 576px)
+        width: 182.91px
+        height: 316.67px
+        top: 0
+        right: 32.56px
+        left: auto
+      @media (max-width: 575px)
+        width: 111.49px
+        height: 193.05px
+        right: 11.51px
+        left: auto
+        top: 12px
       &::before
         content: ''
         display: block
@@ -263,6 +390,8 @@
         background-image: url('../images/design/first/phone/main.png')
         @include only-width(840px)
         @include only-height(632px)
+        @media (max-width: 1199px)
+          display: none
   &-circle
     position: absolute
     width: 26.51px
@@ -315,6 +444,8 @@
     justify-content: center
     position: absolute
     z-index: 1
+    @media (max-width: 1199px)
+      display: none
     &::before
       content: ''
       display: block
