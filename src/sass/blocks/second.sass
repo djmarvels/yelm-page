@@ -1,9 +1,40 @@
 .second
   background-color: #F0F6FA
-  min-height: 512px
   position: relative
   z-index: 2
-  margin-top: 306px
+  @media (min-width: 1200px)
+    margin-top: 306px
+    min-height: 512px
+  @media (max-width: 1199px)
+    margin-top: 60px
+    height: auto
+    padding-bottom: 60px
+  &-video
+    &--mobile
+      @media (max-width: 1199px)
+        margin-top: 60px
+        position: relative
+        z-index: 2
+      @media (max-width: 767px)
+        margin-top: 48px
+    &__title
+      @media (max-width: 1199px)
+        font-style: normal
+        font-size: 18px
+        line-height: 23px
+        font-weight: 350
+        color: $black
+        span
+          background: linear-gradient(269.1deg, #FF6463 1.32%, #FF468B 19.07%, #DD3CBC 34.66%, #B724FF 50.03%, #953AFF 65.81%, #3578FF 82.8%, #0793FF 99.01%)
+          background-clip: text
+          -webkit-text-fill-color: transparent
+          color: transparent
+          margin-left: 4px
+          font-weight: bold
+      @media (max-width: 767px)
+        font-size: 16px
+        line-height: 35px
+        text-align: center
   &-circle
     @include only-width(704px)
     @include only-height(704px)
@@ -11,6 +42,11 @@
     position: absolute
     bottom: 89px
     left: -44px
+    @media (max-width: 1670px)
+      @include only-width(512px)
+      @include only-height(512px)
+    @media (max-width: 1199px)
+      position: initial
     &__inner
       border-radius: 50%
       @include only-width(704px)
@@ -18,6 +54,9 @@
       background: linear-gradient(133.98deg, rgba(255, 255, 255, 0.6) 23.07%, rgba(255, 255, 255, 0.3) 84.25%)
       box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.07)
       backdrop-filter: blur(30px)
+      @media (max-width: 1670px)
+        @include only-width(512px)
+        @include only-height(512px)
     &__specular
       position: absolute
       top: 105.82px
@@ -26,6 +65,8 @@
       height: 82px
       background: url('../images/design/second/circle/specular.png') no-repeat center
       transform: rotate(40.66deg)
+      @media (max-width: 1670px)
+        top: 65px
     &__cloud
       position: absolute
       width: 130.32px
@@ -39,13 +80,22 @@
         @include only-width(151px)
         @include only-height(116px)
         background: url('../images/design/second/circle/cloud.png') no-repeat center
+      @media (max-width: 1670px)
+        bottom: -10px
+        right: 70px
     &__content
       position: absolute
       left: 144px
       top: 137px
+      @media (max-width: 1670px)
+        left: 95px
+        top: 95px
     &__breadcrumbs
       display: flex
       align-items: center
+      @media (max-width: 1199px)
+        margin-bottom: 50px
+        padding-left: 15px
       span
         font-style: normal
         font-weight: 500
@@ -61,6 +111,18 @@
       @include only-width(415px)
       @include only-height(242px)
       position: relative
+      @media (max-width: 1670px) and (min-width: 1200px)
+        @include only-width(340px)
+        @include only-height(170px)
+      @media (max-width: 1199px)
+        @include only-width(345px)
+        @include only-height(201px)
+      @media (max-width: 767px)
+        margin-top: 24px
+        @include only-width(253px)
+        @include only-height(147px)
+        margin-left: auto
+        margin-right: auto
       &-action
         position: absolute
         width: 65px
@@ -74,24 +136,58 @@
         border-radius: 50%
         top: calc(50% - 65px / 2)
         left: calc(50% - 65px / 2)
+        @media (max-width: 767px)
+          width: 39px
+          height: 39px
+          top: calc(50% - 39px / 2)
+          left: calc(50% - 39px / 2)
         &::before
           content: ''
           display: block
-          @include only-width(18px)
-          @include only-height(24px)
-          background: url('../images/design/second/play.svg') no-repeat center
+          @media (min-width: 768px)
+            @include only-width(18px)
+            @include only-height(24px)
+            background: url('../images/design/second/play.svg') no-repeat center
+          @media (max-width: 767px)
+            @include only-width(10px)
+            @include only-height(14px)
+            background: url('../images/design/second/play-mobile.svg') no-repeat center
     &__overlay
       display: flex
       align-items: center
       justify-content: center
       width: 415px
       height: 242px
+      @media (max-width: 1670px) and (min-width: 1200px)
+        width: 340px
+        height: 170px
+        overflow: hidden
+        border-radius: 30px
+      @media (max-width: 1199px)
+        width: 345px
+        height: 201px
+        border-radius: 15px
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.05)
+        overflow: hidden
+      @media (max-width: 767px)
+        width: 253px
+        height: 147px
       &::before
         content: ''
         display: block
         background: url('../images/design/second/overlay.png') no-repeat center
         @include only-width(455px)
         @include only-height(282px)
+        @media (max-width: 1670px) and (min-width: 1200px)
+          background-size: cover
+        @media (max-width: 1199px)
+          background: url('../images/design/second/overlay-tablet.png') no-repeat center
+          @include only-width(347px)
+          @include only-height(201px)
+        @media (max-width: 767px)
+          background: url('../images/design/second/overlay-mobile.png') no-repeat center
+          @include only-width(253px)
+          @include only-height(147px)
     &__title
       font-style: normal
       font-weight: 500
@@ -102,6 +198,10 @@
       flex-direction: column
       align-items: flex-start
       margin-top: 27px
+      @media (max-width: 1670px)
+        margin-top: 12px
+        font-size: 24px
+        line-height: 120%
       span
         display: block
         background-clip: text
@@ -112,42 +212,96 @@
 
   &-content
     padding-top: 75px
+    @media (max-width: 1199px)
+      padding-top: 24px
     &__row
-      &:not(:last-child)
-        margin-bottom: 50px
+      @media (min-width: 1200px)
+        &:not(:last-child)
+          margin-bottom: 50px
+      @media (max-width: 767px)
+        &:not(:last-child)
+          margin-bottom: 35px
+        .col
+          &:not(:last-child)
+            margin-bottom: 35px
     &__col
       display: flex
       align-items: flex-start
+      @media (max-width: 767px)
+        &::before
+          content: ''
+          background-color: $blue
+          @include only-width(8px)
+          @include only-height(8px)
+          margin-right: 16px
+          border-radius: 50%
     &__title
       font-style: normal
       font-weight: 500
-      font-size: 22px
-      line-height: 27px
+      @media (min-width: 1200px)
+        font-size: 22px
+        line-height: 27px
+      @media (max-width: 1199px)
+        font-size: 18px
+        line-height: 22px
+      @media (max-width: 767px)
+        margin-top: -5px
       color: $black
     &__text
-      margin-top: 12px
       font-weight: 350
-      font-size: 16px
-      line-height: 19px
+      margin-top: 12px
+      @media (min-width: 1200px)
+        font-size: 16px
+        line-height: 19px
+      @media (max-width: 1199px)
+        font-size: 14px
+        line-height: 16px
+      @media (max-width: 1199px) and (min-width: 768px)
+        br
+          display: none
+      @media (max-width: 767px)
+        font-size: 12px
+        line-height: 14px
+        margin-top: 6px
       color: $black
       word-break: break-word
     &__image
-      @include only-width(107px)
+      @media (min-width: 1200px)
+        @include only-width(107px)
+        margin-right: 24px
+      @media (max-width: 1199px)
+        @include only-width(60px)
+        margin-right: 18px
+      @media (max-width: 767px)
+        display: none
       display: flex
       align-items: center
       justify-content: center
-      margin-right: 24px
       &--rocket
-        width: 70px
-        height: 146px
-        background: url('../images/design/second/rocket.png') no-repeat center
+        @media (min-width: 1200px)
+          width: 70px
+          height: 146px
+          background: url('../images/design/second/rocket.png') no-repeat center
+        @media (max-width: 1199px)
+          width: 47px
+          height: 98px
+          background: url('../images/design/second/rocket-tablet.png') no-repeat center
       &--shopper
-        width: 107px
-        height: 107px
-        background: url('../images/design/second/shopper.png') no-repeat center
+        @media (min-width: 1200px)
+          width: 107px
+          height: 107px
+          background: url('../images/design/second/shopper.png') no-repeat center
+        @media (max-width: 1199px)
+          background: url('../images/design/second/shopper-tablet.png') no-repeat center
+          width: 55px
+          height: 66px
       &--globus
-        width: 81px
-        height: 107.04px
+        @media (min-width: 1200px)
+          width: 81px
+          height: 107.04px
+        @media (max-width: 1199px)
+          width: 55.25px
+          height: 72.62px
         display: flex
         align-items: center
         justify-content: center
@@ -155,18 +309,35 @@
           content: ''
           display: block
           position: absolute
-          @include only-width(430px)
-          @include only-height(161px)
-          background: url('../images/design/second/globus.png') no-repeat center
-          margin-top: 29px
-          margin-left: 22px
+          @media (min-width: 1200px)
+            @include only-width(430px)
+            @include only-height(161px)
+            background: url('../images/design/second/globus.png') no-repeat center
+            margin-top: 29px
+            margin-left: 22px
+          @media (max-width: 1199px)
+            @include only-width(210px)
+            @include only-height(110px)
+            background: url('../images/design/second/globus-tablet.png') no-repeat center
+            margin-left: 95px
+            margin-top: 22px
       &--money
-        width: 103.56px
-        height: 131.32px
+        @media (min-width: 1200px)
+          width: 103.56px
+          height: 131.32px
+        @media (max-width: 1199px)
+          width: 58.43px
+          height: 86.56px
         &::before
           content: ''
           display: block
           position: absolute
-          @include only-width(107px)
-          @include only-height(135px)
-          background: url('../images/design/second/money.png') no-repeat center
+          @media (min-width: 1200px)
+            @include only-width(107px)
+            @include only-height(135px)
+            background: url('../images/design/second/money.png') no-repeat center
+          @media (max-width: 1199px)
+            @include only-width(62px)
+            @include only-height(90px)
+            background: url('../images/design/second/money-tablet.png') no-repeat center
+            margin-left: -7px

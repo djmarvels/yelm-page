@@ -1,5 +1,5 @@
 import '../sass/app.sass';
-//import 'bootstrap/dist/js/bootstrap.min';
+// import 'bootstrap/dist/js/bootstrap.min';
 
 window.navbar_active = false;
 document.getElementsByClassName('navbar-toggler')[0].addEventListener('click', () => {
@@ -17,4 +17,4 @@ document.getElementsByClassName('navbar-toggler')[0].addEventListener('click', (
     document.body.classList.add('hidden');
     window.navbar_active = true;
   }
-});
+})

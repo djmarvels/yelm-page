@@ -37,22 +37,17 @@
       color: #000
   &--gradient
     &_border
+      @include only-width(242px)
       height: 48px
       padding: 0
       @media (max-width: 1199px)
-        height: 40px
-      border-radius: 30px
-      background: transparent no-repeat
-      border: 1px solid transparent
-      border-image-source: url('../images/design/buttons/gradient_border/default.svg')
-      border-image-slice: 30
-      border-image-width: 48px
-      border-image-outset: 0
+        height: 45px
+      border-radius: 0
+      background-image: url('../images/design/buttons/gradient_border/default.svg')
+      background-repeat: no-repeat
+      background-size: auto !important
       @media (max-width: 1199px)
-        border-image-slice: 22
-        box-sizing: border-box
-        border-image-width: 30px
-        border-image-source: url('../images/design/buttons/gradient_border/default-mobile.svg')
+        background-image: url('../images/design/buttons/gradient_border/default-mobile.svg')
       span
         display: flex
         align-items: center
@@ -63,13 +58,13 @@
         @media (max-width: 1199px)
           font-size: 14px
       &:hover
-        border-image-source: url('../images/design/buttons/gradient_border/hover.svg')
+        background-image: url('../images/design/buttons/gradient_border/hover.svg')
         @media (max-width: 1199px)
-          border-image-source: url('../images/design/buttons/gradient_border/hover-mobile.svg')
+          background-image: url('../images/design/buttons/gradient_border/hover-mobile.svg')
       &:active
-        border-image-source: url('../images/design/buttons/gradient_border/active.svg')
+        background-image: url('../images/design/buttons/gradient_border/active.svg')
         @media (max-width: 1199px)
-          border-image-source: url('../images/design/buttons/gradient_border/active-mobile.svg')
+          background-image: url('../images/design/buttons/gradient_border/active-mobile.svg')
     &_blue
       background-color: $blue
       background-image: url('../images/design/buttons/gradient_blue/default.svg')
