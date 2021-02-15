@@ -35,6 +35,9 @@
         font-size: 16px
         line-height: 35px
         text-align: center
+      @media (max-width: 575px)
+        font-size: 14px
+        line-height: 120%
   &-circle
     @include only-width(704px)
     @include only-height(704px)
@@ -215,7 +218,7 @@
     @media (max-width: 1199px)
       padding-top: 24px
     &__row
-      @media (min-width: 1200px)
+      @media (min-width: 768px)
         &:not(:last-child)
           margin-bottom: 50px
       @media (max-width: 767px)
