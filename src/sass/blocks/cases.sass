@@ -1,0 +1,450 @@
+.cases
+  position: relative
+  margin-top: 150px
+  width: 100%
+  @media (max-width: 767px)
+    margin-top: 0
+  &-breadcrumbs
+    display: flex
+    align-items: center
+    span
+      font-weight: 500
+      font-size: 14px
+      line-height: 17px
+      &:first-child
+        color: $blue
+      &:last-child
+        margin-left: 18px
+        color: #BDBDBD
+  &-title
+    font-style: normal
+    font-weight: 500
+    color: $black
+    @media (min-width: 992px)
+      margin-top: 10px
+      font-size: 56px
+      line-height: 69px
+    @media (max-width: 991px) and (min-width: 768px)
+      margin-top: 32px
+      font-size: 36px
+      line-height: 45px
+    @media (max-width: 767px)
+      font-size: 24px
+      line-height: 30px
+      margin-top: 30px
+  &-carousel
+    @media (min-width: 992px)
+      margin-top: 35px
+    @media (max-width: 991px) and (min-width: 768px)
+      margin-top: 50px
+    @media (max-width: 767px)
+      margin-top: 16px
+    &.owl-carousel
+      .owl-nav
+        margin-top: 0
+        position: absolute
+        top: 0
+        right: 0
+        left: auto
+        z-index: 1001
+        display: flex
+        align-items: center
+        button
+          margin: 0
+          border-radius: 50%
+          border: 1px solid rgba(0, 0, 0, 0)
+          outline: none
+          display: flex
+          align-items: center
+          justify-content: center
+          @media (min-width: 992px)
+            @include only-width(48px)
+            @include only-height(48px)
+          @media (max-width: 991px)
+            @include only-width(40px)
+            @include only-height(40px)
+          svg
+            width: 16px
+            height: 20px
+          &:not(.disabled)
+            background-color: #0A84FF
+            svg path
+              stroke: #ffffff
+          &.disabled
+            border-color: #BDBDBD
+            background-color: transparent
+            svg path
+              stroke: #BDBDBD
+          &.owl-prev
+            @media (min-width: 992px)
+              margin-right: 24px
+            @media (max-width: 991px)
+              margin-right: 18px
+  &-item
+    display: flex
+    align-items: flex-start
+    justify-content: flex-start
+    @media (min-width: 768px)
+      .button.hide
+        display: none
+    @media (max-width: 767px)
+      flex-wrap: wrap
+      .button
+        width: 100%
+        max-width: 327px
+        height: 50px
+        margin: 14px auto 0
+        box-shadow: none
+  &-preview
+    @media (min-width: 992px)
+      @include only-width(348px)
+      @include only-height(650px)
+    @media (max-width: 991px) and (min-width: 768px)
+      @include only-width(236px)
+      @include only-height(442px)
+    @media (max-width: 767px)
+      margin-top: 40px + 19px
+      flex-basis: 236px
+      @include only-width(183px)
+      @include only-height(342px)
+    background-repeat: no-repeat
+    background-color: center top
+    &--yaz
+      @media (min-width: 992px)
+        background-image: url('../images/design/cases/yaz.png')
+      @media (max-width: 991px) and (min-width: 768px)
+        background-image: url('../images/design/cases/yaz-tablet.png')
+      @media (max-width: 767px)
+        background-image: url('../images/design/cases/yaz-mobile.png')
+    &--extra
+      @media (min-width: 992px)
+        background-image: url('../images/design/cases/extra.png')
+      @media (max-width: 991px) and (min-width: 768px)
+        background-image: url('../images/design/cases/extra-tablet.png')
+      @media (max-width: 767px)
+        background-image: url('../images/design/cases/extra-mobile.png')
+  &-content
+    @media (max-width: 767px)
+      flex-basis: calc(100% - 183px)
+      @include only-width(calc(100% - 183px))
+    .button
+      cursor: pointer
+      max-width: 300px
+      @media (min-width: 992px)
+        margin-top: 50px
+      @media (max-width: 991px) and (min-width: 768px)
+        margin-top: 48px
+        height: 50px
+      @media (max-width: 767px)
+        display: none
+  &-body
+    @media (min-width: 992px)
+      margin-left: 11px
+  &-header
+    font-style: normal
+    color: $black
+    @media (min-width: 992px)
+      margin-top: 50px
+      font-size: 36px
+      line-height: 45px
+    @media (min-width: 768px)
+      font-weight: 500
+    @media (max-width: 991px) and (min-width: 768px)
+      margin-top: 5px
+      font-size: 24px
+      line-height: 30px
+      max-width: 340px
+      white-space: nowrap
+      text-overflow: ellipsis
+      overflow: hidden
+    @media (max-width: 767px)
+      position: absolute
+      left: 0
+      top: 10px
+      font-size: 16px
+      line-height: 19px
+      font-weight: 350
+      margin-top: 0
+      width: 100%
+      max-width: calc(100% - 110px)
+      white-space: nowrap
+      text-overflow: ellipsis
+      overflow: hidden
+  &-body
+    @media (min-width: 992px)
+      margin-top: 50px
+    @media (max-width: 991px) and (min-width: 768px)
+      margin-top: 32px
+    @media (max-width: 767px)
+      margin-top: 32px + 38px
+  &-list
+    @media (min-width: 992px)
+      &:not(:last-child)
+        margin-bottom: 50px
+    @media (max-width: 991px)
+      &:not(:last-child)
+        margin-bottom: 32px
+    &__header
+      font-style: normal
+      font-weight: 500
+      color: $black
+      @media (min-width: 992px)
+        font-size: 22px
+        line-height: 27px
+      @media (max-width: 991px) and (min-width: 768px)
+        font-size: 18px
+        line-height: 22px
+      @media (max-width: 767px)
+        word-break: break-word
+        font-size: 14px
+        line-height: 17px
+    &__inner
+      list-style-type: none
+      padding-left: 0
+      @media (min-width: 992px)
+        margin: 30px 0 0
+      @media (max-width: 991px)
+        margin: 16px 0 0
+      li
+        display: flex
+        align-items: center
+        &::before
+          content: '-'
+          display: block
+          margin-right: 4px
+        font-style: normal
+        font-weight: 350
+        color: $black
+        @media (min-width: 992px)
+          font-size: 16px
+          line-height: 19px
+          &:not(:last-child)
+            margin-bottom: 24px
+        @media (max-width: 991px) and (min-width: 768px)
+          font-size: 14px
+          line-height: 16px
+          &:not(:last-child)
+            margin-bottom: 16px
+        @media (max-width: 767px)
+          font-size: 12px
+          line-height: 120%
+          &:not(:last-child)
+            margin-bottom: 6px
+  &-bottom
+    display: flex
+    align-items: center
+    @media (min-width: 992px)
+      margin-top: 50px
+    @media (max-width: 991px) and (min-width: 768px)
+      margin-top: 15px
+    @media (max-width: 767px)
+      margin-top: 32px
+      flex-direction: column
+      align-items: flex-start
+      justify-content: flex-start
+    &__block
+      display: flex
+      align-items: center
+      justify-content: flex-start
+      @media (max-width: 767px)
+        width: 100%
+        &:not(:last-child)
+          margin-bottom: 24px
+    &__image
+      @media (min-width: 992px)
+        @include only-width(103px)
+        @include only-height(103px)
+        border-radius: 20px
+      @media (max-width: 991px) and (min-width: 768px)
+        @include only-width(70px)
+        @include only-height(70px)
+        border-radius: 15px
+      @media (max-width: 767px)
+        @include only-width(60px)
+        @include only-height(60px)
+        border-radius: 15px
+      background-repeat: no-repeat
+      background-position: center
+    &__content
+      font-style: normal
+      font-weight: 350
+      color: $black
+      @media (min-width: 992px)
+        margin-left: 32px
+        font-size: 22px
+        line-height: 26px
+      @media (max-width: 991px) and (min-width: 768px)
+        margin-left: 24px
+        font-size: 18px
+        line-height: 21px
+      @media (max-width: 767px)
+        margin-left: 16px
+        font-size: 14px
+        line-height: 16px
+      span
+        margin: 0 4px
+        -webkit-text-fill-color: transparent
+        color: transparent
+        font-weight: bold
+    &--first
+      @media (min-width: 768px)
+        margin-right: 50px
+      .cases-bottom
+        &__image
+          background-color: #FAB8C4
+          @media (min-width: 992px)
+            background-image: url('../images/design/cases/second-bottom-first.png')
+          @media (max-width: 991px) and (min-width: 768px)
+            background-image: url('../images/design/cases/second-bottom-first-tablet.png')
+          @media (max-width: 767px)
+            background-image: url('../images/design/cases/second-bottom-first-mobile.png')
+        &__content
+          span
+            background: linear-gradient(269.1deg, #FF6463 1.32%, #FF468B 19.07%, #DD3CBC 34.66%, #B724FF 50.03%, #953AFF 65.81%, #3578FF 82.8%, #0793FF 99.01%)
+            background-clip: text
+    &--second
+      .cases-bottom
+        &__image
+          background-color: #B6DBFF
+          @media (min-width: 992px)
+            background-image: url('../images/design/cases/second-bottom-second.png')
+          @media (max-width: 991px) and (min-width: 768px)
+            background-image: url('../images/design/cases/second-bottom-second-tablet.png')
+          @media (max-width: 767px)
+            background-image: url('../images/design/cases/second-bottom-second-mobile.png')
+        &__content
+          span
+            background: linear-gradient(269.1deg, #FF6463 1.32%, #FF468B 19.07%, #DD3CBC 34.66%, #B724FF 50.03%, #953AFF 65.81%, #3578FF 82.8%, #0793FF 99.01%)
+            background-clip: text
+.test
+  @media(min-width: 1200px)
+    position: absolute
+    left: auto
+    right: -24px
+    top: auto
+    bottom: -301.72px
+  @media (max-width: 1410px) and (min-width: 1200px)
+    bottom: -160.72px
+  @media (max-width: 1199px)
+    margin-top: 60px
+  &-backdrop
+    @media(min-width: 1200px)
+      border-radius: 50%
+      background-color: $blue
+      position: absolute
+      z-index: 0
+      left: auto
+      right: -180px
+      top: -82px
+      @include only-width(438px)
+      @include only-height(435px)
+      @media (max-width: 1410px) and (min-width: 1200px)
+        @include only-width(300px)
+        @include only-height(300px)
+        top: -60px
+  &-circle
+    @media(min-width: 1200px)
+      border-radius: 50%
+      @include only-width(516px)
+      @include only-height(514px)
+      background: linear-gradient(139.55deg, rgba(255, 255, 255, 0.7) 18.78%, rgba(255, 255, 255, 0.6) 90.6%)
+      box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.07)
+      backdrop-filter: blur(30px)
+      @media (max-width: 1410px) and (min-width: 1200px)
+        @include only-width(316px)
+        @include only-height(314px)
+    @media (max-width: 1199px)
+      background-color: #F0F6FA
+  &-cube
+    @media(min-width: 1200px)
+      background: url('../images/design/cases/cube.png') no-repeat center
+      @include only-width(129.45px)
+      @include only-height(120px)
+      position: absolute
+      top: auto
+      bottom: -7.71px
+      left: 2.32px
+      @media (max-width: 1410px) and (min-width: 1200px)
+        @include only-width(80px)
+        @include only-height(80px)
+        background-size: contain
+  &-content
+    @media(min-width: 1200px)
+      position: absolute
+      top: 153px
+      left: 121px
+    @media (max-width: 1410px) and (min-width: 1200px)
+      left: 60px
+      top: 90px
+    @media (max-width: 1199px)
+      padding-top: 24px
+      padding-bottom: 60px
+  &-title
+    margin-top: 9px
+    font-style: normal
+    font-weight: 500
+    font-size: 28px
+    line-height: 35px
+    color: $black
+    max-width: max-content
+    @media (max-width: 1410px) and (min-width: 1200px)
+      font-size: 20px
+      line-height: 120%
+    @media (max-width: 767px)
+      font-size: 14px
+      line-height: 120%
+      margin-top: 48px
+    span
+      font-weight: bold
+      display: block
+      background: linear-gradient(269.1deg, #FF6463 1.32%, #FF468B 19.07%, #DD3CBC 34.66%, #B724FF 50.03%, #953AFF 65.81%, #3578FF 82.8%, #0793FF 99.01%)
+      background-clip: text
+      -webkit-text-fill-color: transparent
+      color: transparent
+    @media (max-width: 1199px)
+      margin-top: 32px
+      font-size: 24px
+      line-height: 30px
+      margin-left: auto
+      margin-right: auto
+      span
+        display: inline-block
+        margin-left: 6px
+  &-button
+    &.button
+      display: block
+      outline: none
+      border: 0
+      font-style: normal
+      padding: 0
+      @media (min-width: 1411px)
+        width: 271px
+        height: 60px
+        margin-top: 25px
+      @media (max-width: 1410px) and (min-width: 1200px)
+        margin-top: 12px
+        width: 200px
+        height: 40px
+      @media (max-width: 1199px)
+        margin-top: 33px
+        margin-left: auto
+        margin-right: auto
+        width: 327px
+      @media (max-width: 767px)
+        width: 100%
+        margin-top: 24px
+      span
+        font-size: 18px
+        font-weight: 500
+        color: #ffffff
+        @media (max-width: 1410px) and (min-width: 1200px)
+          font-size: 16px
+        @media (max-width: 1199px) and (min-width: 768px)
+          font-size: 18px
+        @media (max-width: 767px)
+          font-size: 16px
+    &:hover
+      background-color: $blue
+    &:active
+      span
+        color: $black

@@ -2,11 +2,15 @@
 @import "variables"
 @import "mixins"
 @import "~normalize.scss"
+@import "~owl.carousel/dist/assets/owl.carousel.min.css"
+@import "~owl.carousel/dist/assets/owl.theme.default.min.css"
 @import "~bootstrap/scss/bootstrap-grid"
-
+@import "~animate.css/animate.min.css"
 body
   font-family: 'Stem', sans-serif
-  @include custom-scrollbar()
+  // @include custom-scrollbar()
+  &::-webkit-scrollbar
+    width: 0
   &.hidden
     overflow: hidden
 a
@@ -16,6 +20,8 @@ a
 
 .page
   padding-top: 100px
+  @include only-width(calc(100vw - 0))
+  overflow-x: hidden
   @media (max-width: 1199px)
     padding-top: 70px
 
