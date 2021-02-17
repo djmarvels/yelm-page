@@ -39,7 +39,8 @@ $(document).ready(() => {
       + '<path d="M0.999512 8.99194L20.9995 8.99194" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>\n'
       + '<path d="M13.9995 1.99194L20.9995 8.99194L13.9995 15.9919" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>'],
   });
-  let integrations_carousel_config = {
+  // eslint-disable-next-line camelcase
+  const integrations_carousel_config = {
     nav: false,
     dots: false,
     margin: 0,
@@ -48,14 +49,14 @@ $(document).ready(() => {
     loop: true,
     autoplay: true,
     autoplayHoverPause: false,
-    autoplayTimeout: 5000,
-    autoplaySpeed: 5000,
-    smartSpeed: 5000,
+    autoplayTimeout: 10000,
+    autoplaySpeed: 10000,
+    smartSpeed: 10000,
     slideTransition: 'linear',
   };
   $('.integrations-carousel#first').owlCarousel(integrations_carousel_config);
   integrations_carousel_config.rtl = true;
   $('.integrations-carousel#second').owlCarousel(integrations_carousel_config);
-  delete integrations_carousel_config['rtl'];
+  delete integrations_carousel_config.rtl;
   $('.integrations-carousel#third').owlCarousel(integrations_carousel_config);
 });
