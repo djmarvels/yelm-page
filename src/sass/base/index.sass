@@ -4,7 +4,7 @@
 @import "~normalize.scss"
 @import "~owl.carousel/dist/assets/owl.carousel.min.css"
 @import "~owl.carousel/dist/assets/owl.theme.default.min.css"
-@import "~bootstrap/scss/bootstrap-grid"
+@import "~bootstrap/scss/bootstrap"
 @import "~animate.css/animate.min.css"
 body
   font-family: 'Stem', sans-serif
@@ -37,6 +37,14 @@ a
 #blot
   height: 0
   width: 0
+
+.only
+  &--md
+    @media (max-width: 767px)
+      display: none
+  &--sm
+    @media (min-width: 768px)
+      display: none
 
 .view
   &--lg

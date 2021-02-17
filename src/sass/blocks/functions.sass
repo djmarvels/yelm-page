@@ -1,0 +1,311 @@
+.functions
+  @media (min-width: 1200px)
+    margin-top: 160px
+  @media (max-width: 1199px)
+    margin-top: 60px
+  &-breadcrumbs
+    display: flex
+    align-items: center
+    span
+      display: block
+      font-style: normal
+      font-weight: 500
+      @media (min-width: 1200px)
+        font-size: 14px
+        line-height: 17px
+      @media (max-width: 1199px)
+        font-size: 12px
+        line-height: 15px
+      &:first-child
+        color: $blue
+      &:last-child
+        @media (min-width: 1200px)
+          margin-left: 18px
+        @media (max-width: 1199px)
+          margin-left: 20px
+        color: #BDBDBD
+  &-title
+    display: block
+    font-style: normals
+    font-weight: 500
+    color: #333333
+    @media (min-width: 1200px)
+      font-size: 56px
+      line-height: 69px
+      margin-top: 10px
+    @media (max-width: 1199px)
+      font-size: 36px
+      line-height: 45px
+      margin-top: 32px
+  &-body
+    flex-wrap: wrap
+    display: flex
+    justify-content: space-between
+    @media (min-width: 1200px)
+      margin-top: 64px
+    @media (max-width: 1199px) and (min-width: 768px)
+      margin-top: 57px
+    @media (max-width: 767px)
+      padding-top: 32px
+      flex-direction: column
+  &-row
+    display: flex
+    @media (min-width: 1200px)
+      align-items: center
+    @media (max-width: 1199px)
+      flex-direction: column
+    @media (max-width: 1199px) and (min-width: 768px)
+      flex-basis: calc(50% - 20px)
+    @media (max-width: 767px)
+      flex-basis: 100%
+      &:not(:last-child)
+        margin-bottom: 32px
+    &__header
+      font-style: normal
+      font-weight: 500
+      color: #333333
+      @media (min-width: 1200px)
+        margin-bottom: 19px
+        font-size: 22px
+        line-height: 27px
+      @media (max-width: 1199px) and (min-width: 768px)
+        margin-bottom: 16px
+        font-size: 18px
+        line-height: 22px
+        &::before
+          width: 24px
+          height: 3px
+          margin-right: 20px
+      @media (max-width: 1199px)
+        display: flex
+        align-items: center
+        &::before
+          content: ''
+          display: block
+          border-radius: 5px
+          background-color: $black
+      @media (max-width: 767px)
+        margin-bottom: 10px
+        font-size: 14px
+        line-height: 17px
+        &::before
+          width: 16px
+          height: 3px
+          margin-right: 16px
+    &__text
+      font-style: normal
+      font-weight: 350
+      color: #333333
+      width: 100%
+      word-break: break-word
+      @media (min-width: 1200px)
+        font-size: 16px
+        line-height: 19px
+      @media (max-width: 1199px) and (min-width: 768px)
+        font-size: 14px
+        line-height: 16px
+        max-width: 353px
+      @media (max-width: 767px)
+        font-size: 12px
+        line-height: 14px
+        max-width: 263px
+        padding-left: 48px - 14px
+    &__image
+      @media (min-width: 1200px)
+        position: relative
+        display: flex
+        align-items: center
+        &::before
+          content: ''
+          background: #B6DBFF
+          filter: blur(40px)
+          border-radius: 100px
+          @include only-width(121px)
+          @include only-height(121px)
+          display: block
+          position: absolute
+          z-index: 0
+        &-inner
+          position: relative
+          z-index: 1
+    &--bells
+      @media (min-width: 1200px)
+        flex-basis: 519px
+        margin-bottom: 59px
+        .functions-row__image
+          margin-right: 44.05px
+          &::before
+            left: -66px
+          &-inner
+            @include only-width(94.95px)
+            @include only-height(102px)
+            background: url('../images/design/functions/bells.png') no-repeat center
+        .functions-row__text
+          max-width: 380px
+      @media (max-width: 1199px) and (min-width: 768px)
+        margin-bottom: 50px
+    &--note
+      @media (min-width: 1200px)
+        flex-basis: 515px
+        margin-bottom: 49.56px
+        .functions-row__image
+          margin-right: 42.3px
+          &::before
+            left: -70px
+          &-inner
+            @include only-width(92.7px)
+            @include only-height(112.87px)
+            background: url('../images/design/functions/note.png') no-repeat center
+        .functions-row__text
+          max-width: 380px
+      @media (max-width: 1199px) and (min-width: 768px)
+        margin-bottom: 32px
+    &--timer
+      @media (min-width: 1200px)
+        margin-bottom: 58px
+        flex-basis: 515.9px
+        .functions-row__image
+          margin-right: 43.97px
+          &::before
+            left: -65.1px
+          &-inner
+            @include only-width(95.93px)
+            @include only-height(118px)
+            background: url('../images/design/functions/timer.png') no-repeat center
+        .functions-row__text
+          max-width: 376px
+      @media (max-width: 1199px) and (min-width: 768px)
+        margin-bottom: 32px
+    &--loyalty
+      @media (min-width: 1200px)
+        flex-basis: 514px
+        margin-bottom: 49.56px
+        .functions-row__image
+          margin-right: 37.92px
+          &::before
+            left: -67px
+          &-inner
+            @include only-width(100.08px)
+            @include only-height(113px)
+            background: url('../images/design/functions/loyalty.png') no-repeat center
+        .functions-row__text
+          max-width: 376px
+      @media (max-width: 1199px) and (min-width: 768px)
+        margin-bottom: 39px
+    &--puzzle
+      @media (min-width: 1200px)
+        flex-basis: 517px
+        margin-bottom: 34.12px
+        .functions-row__image
+          margin-right: 34.97px
+          &::before
+            left: -67.27px
+          &-inner
+            @include only-width(102.76px)
+            @include only-height(113px)
+            background: url('../images/design/functions/puzzle.png') no-repeat center
+        .functions-row__text
+          max-width: 380px
+      @media (max-width: 1199px) and (min-width: 768px)
+        margin-bottom: 32px
+    &--planet
+      @media (min-width: 1200px)
+        margin-bottom: 65.98px
+        flex-basis: 518px
+        .functions-row__image
+          margin-right: 38.29px
+          &::before
+            left: -67px
+          &-inner
+            @include only-width(99.71px)
+            @include only-height(99.04px)
+            background: url('../images/design/functions/planet.png') no-repeat center
+        .functions-row__text
+          max-width: 380px
+      @media (max-width: 1199px) and (min-width: 768px)
+        margin-bottom: 32px
+    &--list
+      @media (min-width: 1200px)
+        flex-basis: 530px
+        .functions-row__image
+          margin-right: 16.71px
+          &::before
+            left: -51px
+          &-inner
+            transform: rotate(2.88deg)
+            @include only-width(134px)
+            @include only-height(134px)
+            background-size: contain
+            background: url('../images/design/functions/list.png') no-repeat center
+        .functions-row__text
+          max-width: 376px
+    &--chat
+      @media (min-width: 1200px)
+        flex-basis: 517px
+        .functions-row__image
+          margin-right: 43px
+          &::before
+            left: -64px
+          &-inner
+            @include only-width(98px)
+            @include only-height(98px)
+            &::before
+              content: ''
+              @include only-width(291px)
+              @include only-height(116px)
+              display: block
+              margin-left: -143px
+              background: url('../images/design/functions/chat.png') no-repeat center
+        .functions-row__text
+          max-width: 376px
+  &-collapse
+    width: 100%
+    margin-top: 21px
+    padding: 24px 14px
+    background: #FFFFFF
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05)
+    backdrop-filter: blur(10px)
+    border-radius: 10px
+    &-button
+      border: 0
+      background: transparent
+      padding: 0
+      margin: 0
+      outline: none
+      display: flex
+      align-items: center
+      justify-content: space-between
+      width: 100%
+      &__arrow
+        width: 24px
+        height: 24px
+        display: flex
+        align-items: center
+        justify-content: center
+        transition: transform 350ms
+        &::before
+          content: ''
+          display: block
+          background: url('../images/design/functions/chevron_down.svg') no-repeat center
+          width: 14px
+          height: 7px
+      &__title
+        font-style: normal
+        font-weight: 500
+        font-size: 16px
+        line-height: 20px
+        color: #333333
+        margin-bottom: 8px
+        display: block
+        text-align: left
+      &__subtitle
+        font-style: normal
+        font-weight: 350
+        font-size: 12px
+        line-height: 14px
+        color: #828282
+        display: block
+        text-align: left
+      &[aria-expanded="true"]
+        .functions-collapse-button__arrow
+          transform: rotateZ(180deg)

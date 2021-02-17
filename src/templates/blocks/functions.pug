@@ -1,0 +1,37 @@
+- const function_rows = [
+- { image: 'bells', title: 'Новости', text: 'Актуальные новости о ваших событиях и акциях уже в телефоне вашего клиента' },
+- { image: 'note',  title: 'Категория', text: 'Все ваши товары, разделенные на удобные вам и покупателям категории с удобной корзиной и возможностью оплаты онлайн' },
+- { image: 'timer', title: 'PUSH', text: 'Сообщайте что угодно моментально. Отправляйте сообщения непосредственно на устройство клиента. Это бесплатно и эффективно. ' },
+- { image: 'loyalty', title: 'Программа лояльности', text: 'Cоздайте реферальную программу, которая даст вам больше информации о покупателях и увеличит их средний чек и лояльность' },
+- { image: 'puzzle', title: 'Интеграции', text: 'Самые необходимые сервисы в нашем приложении - собственные, Но все равно вы можете интегрировать огромное количество сервисов от наших партнеров' },
+- { image: 'planet', title: 'Доставка', text: 'Вы хотите масштабировать свой бизнес и продавать товар по всей россии? Вы больше не хотите тратить свои деньги на рекламу деливери и яндекса? Доставка теперь из вашего приложения!' },
+- { image: 'list', title: 'Меню', text: 'Позвольте вашим гостям посмотреть меню прямо из приложения, а возможно и сразу заказать. + доступно NFC меню' },
+- { image: 'chat', title: 'Онлайн чат', text: 'Общение с клиентами в удобном им и вам месте не отрывая их от покупок' }
+- ];
+.functions.container
+    .functions-breadcrumbs
+        span 04
+        span Возможности
+    .functions-title.only--md Основные функции
+    .functions-body.only--md
+        each function_row in function_rows
+            div(class='functions-row functions-row--' + function_row.image)
+                .functions-row__image
+                    .functions-row__image-inner
+                .functions-row__content
+                    .functions-row__header=function_row.title
+                    .functions-row__text=function_row.text
+    .functions-collapse.only--sm
+        button.functions-collapse-button(type="button", data-toggle="collapse", data-target="#collapseExample", aria-expanded="false", aria-controls="collapseExample")
+            span.functions-collapse-button__content
+                span.functions-collapse-button__title Что мы умеем?
+                span.functions-collapse-button__subtitle Узнайте больше о них функциях
+            span.functions-collapse-button__arrow
+        .collapse.functions-collapse__inner#collapseExample
+            .functions-body
+                each function_row in function_rows
+                    div(class='functions-row functions-row--' + function_row.image)
+                        .functions-row__content
+                            .functions-row__header=function_row.title
+                            .functions-row__text=function_row.text
+div(style="height: 500px")

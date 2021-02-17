@@ -5,7 +5,6 @@ import 'owl.carousel';
 
 window.navbar_active = false;
 document.getElementsByClassName('navbar-toggler')[0].addEventListener('click', () => {
-  // eslint-disable-next-line no-console
   if (window.navbar_active) {
     document.getElementsByClassName('navbar-menu')[0].classList.remove('navbar-menu--open');
     document.getElementsByClassName('navbar-toggler')[0].classList.remove('navbar-toggler--active');
@@ -25,7 +24,6 @@ $(document).ready(() => {
   $('.cases-carousel').owlCarousel({
     margin: 20,
     items: 1,
-    // autoWidth: true,
     nav: true,
     dots: false,
     animateIn: 'animate__zoomInLeft',
