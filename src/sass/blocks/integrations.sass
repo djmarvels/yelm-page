@@ -1,0 +1,102 @@
+.integrations
+  @media (min-width: 1200px)
+    margin-bottom: 50px
+    margin-top: 150px
+  @media (max-width: 1199px) and (min-width: 768px)
+    margin-bottom: 48px
+    margin-top: 80px
+  @media (max-width: 767px)
+    margin-top: 60px
+    margin-bottom: 32px
+  &-carousel
+    width: 100%
+    .item
+      @media (min-width: 1200px)
+        @include only-width(332px + 48px)
+        @include only-height(80px + 48px)
+      @media (max-width: 1199px)
+        @include only-width(255px + 24px)
+        @include only-height(60px + 24px)
+      display: flex
+      align-items: center
+  &-item
+    padding: 0
+    background: #FFFFFF
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05)
+    backdrop-filter: blur(10px)
+    border-radius: 20px
+    display: flex
+    align-items: center
+    justify-content: center
+    @media (min-width: 1200px)
+      @include only-width(332px)
+      @include only-height(80px)
+    @media (max-width: 1199px)
+      @include only-width(255px)
+      @include only-height(60px)
+  &-image
+    background-size: contain !important
+  &--delivery
+    @media (min-width: 1200px)
+      @include only-width(175px)
+      @include only-height(54px)
+    @media (max-width: 1199px)
+      @include only-width(139.76px)
+      @include only-height(43.2px)
+    background: url('../images/design/integrations/delivery.png') no-repeat center
+  &--r_keeper
+    @media (min-width: 1200px)
+      @include only-width(184px)
+      @include only-height(80px)
+    @media (max-width: 1199px)
+      @include only-width(140.51px)
+      @include only-height(60.99px)
+    background: url('../images/design/integrations/r_keeper.png') no-repeat center
+  &--iiko
+    @media (min-width: 1200px)
+      @include only-width(141px)
+      @include only-height(61px)
+    @media (max-width: 1199px)
+      @include only-width(109.12px)
+      @include only-height(50.31px)
+    background: url('../images/design/integrations/iiko.png') no-repeat center
+  &--yandex_eda
+    @media (min-width: 1200px)
+      @include only-width(199px)
+      @include only-height(52px)
+    @media (max-width: 1199px)
+      @include only-width(160.89px)
+      @include only-height(41.17px)
+    background: url('../images/design/integrations/yandex_eda.png') no-repeat center
+  &--yclients
+    @media (min-width: 1200px)
+      @include only-width(196px)
+      @include only-height(48px)
+    @media (max-width: 1199px)
+      @include only-width(145.85px)
+      @include only-height(36.59px)
+    background: url('../images/design/integrations/yclients.png') no-repeat center
+  &--amocrm
+    @media (min-width: 1200px)
+      @include only-width(180px)
+      @include only-height(60px)
+    @media (max-width: 1199px)
+      @include only-width(138.2px)
+      @include only-height(47.27px)
+    background: url('../images/design/integrations/amocrm.png') no-repeat center
+  &--cloudpayments
+    @media (min-width: 1200px)
+      @include only-width(74px)
+      @include only-height(63px)
+    @media (max-width: 1199px)
+      @include only-width(58.3px)
+      @include only-height(50.31px)
+    background: url('../images/design/integrations/cloudpayments.png') no-repeat center
+  &--appsflyer
+    @media (min-width: 1200px)
+      @include only-width(192px)
+      @include only-height(57px)
+    @media (max-width: 1199px)
+      @include only-width(146.49px)
+      @include only-height(45.74px)
+    background: url('../images/design/integrations/appsflyer.png') no-repeat center

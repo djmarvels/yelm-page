@@ -23,8 +23,9 @@ document.getElementsByClassName('navbar-toggler')[0].addEventListener('click', (
 $(document).ready(() => {
   $('.cases-carousel').owlCarousel({
     margin: 20,
-    items: 1,
     nav: true,
+    // autoWidth: true,
+    items: 1,
     dots: false,
     animateIn: 'animate__zoomInLeft',
     animateOut: 'animate__zoomOutRight',
@@ -38,4 +39,23 @@ $(document).ready(() => {
       + '<path d="M0.999512 8.99194L20.9995 8.99194" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>\n'
       + '<path d="M13.9995 1.99194L20.9995 8.99194L13.9995 15.9919" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>'],
   });
+  let integrations_carousel_config = {
+    nav: false,
+    dots: false,
+    margin: 0,
+    items: 5,
+    autoWidth: true,
+    loop: true,
+    autoplay: true,
+    autoplayHoverPause: false,
+    autoplayTimeout: 5000,
+    autoplaySpeed: 5000,
+    smartSpeed: 5000,
+    slideTransition: 'linear',
+  };
+  $('.integrations-carousel#first').owlCarousel(integrations_carousel_config);
+  integrations_carousel_config.rtl = true;
+  $('.integrations-carousel#second').owlCarousel(integrations_carousel_config);
+  delete integrations_carousel_config['rtl'];
+  $('.integrations-carousel#third').owlCarousel(integrations_carousel_config);
 });
