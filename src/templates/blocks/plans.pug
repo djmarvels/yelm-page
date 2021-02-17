@@ -1,0 +1,118 @@
+- const base_advantage = [
+- { text: 'Заполнение товаров', disabled: false }, { text: 'Размещение товаров на главной', disabled: false }, { text: 'Категории товаров', disabled: false }, { text: 'Размещение новостей', disabled: false },
+- { text: 'Дата и время публикации новостей', disabled: false }, { text: 'Общение с клиентом в чате', disabled: false }, { text: 'Добавление товара в чат', disabled: false }, { text: 'Просмотр заказов', disabled: false },
+- { text: 'Отправка уведомлений', disabled: false }, { text: 'Оплата картой / Apple pay / Google pay', disabled: false }, { text: 'Кэшбек', disabled: false }, { text: 'Информационная карта', disabled: false },
+- { text: 'Карта с адресами', disabled: false }, { text: 'Услуги по настройке рекламы', disabled: false }, { text: 'Услуги дизайнера', disabled: false }, { text: 'Услуги по наполнению контентом', disabled: false },
+- { text: 'PRO функции', disabled: true },
+- ];
+- const pro_advantage = [
+- { text: 'Все функции из тарифа <b>Base</b>', disabled: false }, { text: 'Деятельность пользователя в приложении', disabled: false }, { text: 'Конверсия покупок', disabled: false }, { text: 'Подкатегории', disabled: false },
+- { text: 'Скидки на товары', disabled: false }, { text: 'Рейтинг товаров', disabled: false }, { text: 'Учет склада', disabled: false }, { text: 'Прикрепление товара в новости', disabled: false },
+- { text: 'Web-новости', disabled: false }, { text: 'Поделиться новостью и товаром', disabled: false }, { text: 'Выставление счета в чате', disabled: false }, { text: 'Предпросмотр корзины', disabled: false },
+- { text: 'Промокоды', disabled: false }, { text: 'Акция 1+1', disabled: false }, { text: 'Iiko & r_keeper', disabled: false }, { text: 'Мультиязычность', disabled: false }, { text: 'Мультивалютность', disabled: false }
+- ];
+.plans
+    .plans-circle.plans-circle--blue
+    .plans-circle.plans-circle--pink
+    .plans-coins
+    .plans-line
+    .plans-left_hand
+    .container
+        .plans-breadcrumbs
+            span 07
+            span Цены
+        .plans-header
+            .plans-title Выберите свой тариф
+            .plans-actions
+                button.plans-actions__button(data-month="3") 3 месяца
+                button.plans-actions__button(data-month="6") 6 месяцев
+                    span -40%
+                button.plans-actions__button(data-month="12") 12 месяцев
+                    span - 60%
+        .plans-body
+            .plans-box
+                .plans-box__header
+                    .plans-box__title Base
+                    .plans-box__rating
+                        span.star.star--solid
+                        span.star.star--solid
+                        span.star.star--solid
+                        span.star
+                        span.star
+                .plans-box__price
+                    span(plans-price="base")
+                    span /в месяц
+                .plans-box__content
+                    ul.plans-box__list
+                        each item in base_advantage
+                            if !item.disabled
+                                li.plans-box__item !{item.text}
+                            else
+                                li.plans-box__item.plans-box__item--disabled !{item.text}
+                .button.button--gradient_colors
+                    span Попробовать 30 дней бесплатно
+            .plans-box
+                .plans-box__header
+                    .plans-box__title Pro
+                    .plans-box__rating
+                        span.star.star--solid
+                        span.star.star--solid
+                        span.star.star--solid
+                        span.star.star--solid
+                        span.star.star--solid
+                .plans-box__price
+                    span(plans-price="pro")
+                    span /в месяц
+                .plans-box__content
+                    ul.plans-box__list
+                        each item in pro_advantage
+                            if !item.disabled
+                                li.plans-box__item !{item.text}
+                            else
+                                li.plans-box__item.plans-box__item--disabled !{item.text}
+                .button.button--gradient_colors
+                    span Попробовать 30 дней бесплатно
+        .plans-bottom
+            .plans-bottom-collapse
+                button.plans-bottom__button(type="button", data-toggle="collapse", data-target="#need_app", aria-expanded="false", aria-controls="need_app")
+                    span.span.plans-bottom__title
+                        span.plans-bottom__image.plans-bottom--bag
+                        span.plans-bottom__title-inner
+                            | Нужно ли мне
+                            br
+                            | свое приложение?
+                    span.plans-bottom__arrow
+                .collapse.plans-bottom-collapse__content#need_app
+                    span Ответ на вопрос, который еще никто не придумал Ответ на вопрос, который еще никто не придумал Ответ на вопрос, который еще никто не придумал Ответ на вопрос, который еще никто не придумал
+            .plans-bottom-collapse
+                button.plans-bottom__button(type="button", data-toggle="collapse", data-target="#profit", aria-expanded="false", aria-controls="profit")
+                    span.span.plans-bottom__title
+                        span.plans-bottom__image.plans-bottom--star
+                        span.plans-bottom__title-inner
+                            | Как увеличить прибыль,
+                            br
+                            | а не оборот?
+                    span.plans-bottom__arrow
+                .collapse.plans-bottom-collapse__content#profit
+                    span Ответ на вопрос, который еще никто не придумал Ответ на вопрос, который еще никто не придумал Ответ на вопрос, который еще никто не придумал Ответ на вопрос, который еще никто не придумал
+            .plans-bottom-collapse
+                button.plans-bottom__button(type="button", data-toggle="collapse", data-target="#return", aria-expanded="false", aria-controls="return")
+                    span.span.plans-bottom__title
+                        span.plans-bottom__image.plans-bottom--circle
+                        span.plans-bottom__title-inner
+                            | Что делать, если клиенты
+                            br
+                            | не возвращаются?
+                    span.plans-bottom__arrow
+                .collapse.plans-bottom-collapse__content#return
+                    span Ответ на вопрос, который еще никто не придумал Ответ на вопрос, который еще никто не придумал Ответ на вопрос, который еще никто не придумал Ответ на вопрос, который еще никто не придумал
+    .plans-notify
+        .plans-notify-box
+            .plans-notify-title
+                | Прямо сейчас
+                span 7
+                | компаний
+                br
+                | создают себе приложение в YELM
+            .button.button--gradient_blue
+                span Попробовать бесплатно

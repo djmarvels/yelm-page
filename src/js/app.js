@@ -3,6 +3,20 @@ import 'jquery';
 import 'bootstrap/dist/js/bootstrap.min';
 import 'owl.carousel';
 
+const getPriceByMonth = (month) => {
+  const PriceTypes = { base: 4990, pro: 12500 };
+  // eslint-disable-next-line no-nested-ternary
+  const powPercents = month === 3 ? 0.0 : month === 6 ? 0.4 : month === 12 ? 0.6 : 0.0;
+  PriceTypes.base = roundedNumberToNumber(Math.round(((PriceTypes.base - (PriceTypes.base * powPercents)) * month) / month), 10).toLocaleString('ru-RU', { currency: 'RUB' });
+  PriceTypes.pro = roundedNumberToNumber(Math.round(((PriceTypes.pro - (PriceTypes.pro * powPercents)) * month) / month), 10).toLocaleString('ru-RU', { currency: 'RUB' });
+  return PriceTypes;
+};
+
+function roundedNumberToNumber (value, number) {
+  // eslint-disable-next-line no-mixed-operators
+  return value % number ? value + number - value % number : value;
+}
+
 window.navbar_active = false;
 document.getElementsByClassName('navbar-toggler')[0].addEventListener('click', () => {
   if (window.navbar_active) {
@@ -20,7 +34,34 @@ document.getElementsByClassName('navbar-toggler')[0].addEventListener('click', (
   }
 });
 
+// eslint-disable-next-line no-unused-vars
+const generateMonth = () => {
+  $('[data-month]').each((index, element) => {
+    // eslint-disable-next-line radix
+    const month = parseInt($(element).attr('data-month'));
+    if (month !== window.select_month) {
+      $(element).removeClass('active');
+    } else {
+      $(element).addClass('active');
+    }
+    const prices = getPriceByMonth(window.select_month);
+    $('[plans-price="base"]').text(prices.base);
+    $('[plans-price="pro"]').text(prices.pro);
+  });
+};
+
+$('body').on('click', '[data-month]', (event) => {
+  // eslint-disable-next-line radix
+  if (event.target.tagName === 'BUTTON') {
+    // eslint-disable-next-line radix
+    window.select_month = parseInt($(event.target).attr('data-month'));
+    generateMonth();
+  }
+});
+
 $(document).ready(() => {
+  window.select_month = 3;
+  generateMonth();
   $('.cases-carousel').owlCarousel({
     margin: 20,
     nav: true,
