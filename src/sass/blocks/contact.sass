@@ -1,5 +1,6 @@
 .contact
   padding: 80px 0
+  position: relative
   .plans-breadcrumbs
     padding-top: 0
   &-header
@@ -110,4 +111,81 @@
         width: 100%
         &::placeholder
           color: #BDBDBD
+
+  &-right
+    width: 100%
+    position: absolute
+    top: 0
+    @media (max-width: 1780px) and (min-width: 1630px)
+      right: -5%
+    @media (max-width: 1629px) and (min-width: 1400px)
+      right: -15%
+    @media (max-width: 1399px) and (min-width: 1280px)
+      right: -20%
+    @media (max-width: 1279px)
+      right: -25%
+    &-circle
+      width: 100%
+      @include only-width(610px)
+      @include only-height(606px)
+      background-color: $blue
+      border-radius: 50%
+      position: absolute
+      right: 182px
+      top: 44px
+      left: auto
+    &-image
+      @include only-width(1082.73px)
+      @include only-height(653px)
+      position: absolute
+      background: url('../images/design/contact/image.png') no-repeat center
+      top: 29.28px
+      left: 130.38px
+      transform: rotate(3.39deg)
+    &-cube
+      @include only-width(104.11px)
+      @include only-height(96.51px)
+      position: absolute
+      top: -13.17px
+      right: 129.76px
+      left: auto
+      background: url('../images/design/contact/cube.png') no-repeat center
+      transform: rotate(15deg)
+    &-category
+      @include only-width(233.39px)
+      @include only-height(200.64px)
+      top: 205.75px
+      left: 9.92px
+      position: absolute
+      background: url('../images/design/contact/category.png') no-repeat center
+      transform: rotate(-6.05deg)
+
+  &-left
+    width: 100%
+    position: absolute
+    top: 0
+    @media (max-width: 1780px) and (min-width: 1630px)
+      left: -5%
+    @media (max-width: 1629px) and (min-width: 1400px)
+      left: -15%
+    @media (max-width: 1399px) and (min-width: 1280px)
+      left: -20%
+    @media (max-width: 1279px)
+      left: -25%
+    &-circle
+      position: absolute
+      @include only-width(25.58px)
+      @include only-height(25.58px)
+      border-radius: 50%
+      background: #F2F2F2
+      top: 654.4px
+      left: 278.14px
+      &_big
+        position: absolute
+        @include only-width(702.18px)
+        @include only-height(702.96px)
+        border-radius: 50%
+        border: 1px solid rgba(227, 230, 233, 0.7)
+        top: 210.25px
+        left: -393.51px
 
