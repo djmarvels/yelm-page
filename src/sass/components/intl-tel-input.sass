@@ -1,0 +1,167 @@
+$hoverColor: rgba(0, 0, 0, 0.05) !default
+$greyText: #999 !default
+$greyBorder: #CCC !default
+
+$flagHeight: 15px !default
+$flagWidth: 20px !default
+$flagPadding: 8px !default
+$borderWidth: 1px !default
+
+$arrowHeight: 4px !default
+$arrowWidth: 6px !default
+$triangleBorder: 3px !default
+$arrowPadding: 6px !default
+$arrowColor: #555 !default
+
+$inputPadding: 6px !default
+$selectedFlagWidth: $flagWidth + (2 * $flagPadding) !default
+$selectedFlagArrowWidth: $flagWidth + $flagPadding + $arrowWidth + (2 * $arrowPadding) !default
+
+$flagsImagePath: "../img/" !default
+$flagsImageName: "flags" !default
+$flagsImageExtension: "png" !default
+
+$mobilePopupMargin: 30px !default
+
+.iti
+  position: relative
+  display: inline-block
+  *
+    box-sizing: border-box
+    -moz-box-sizing: border-box
+  &__hide
+    display: none
+  &__v-hide
+    visibility: hidden
+  input, input[type=text], input[type=tel]
+    position: relative
+    z-index: 0
+    margin-top: 0 !important
+    margin-bottom: 0 !important
+    padding-right: $selectedFlagWidth
+    margin-right: 0
+
+  &__flag-container
+    position: absolute
+    top: 0
+    bottom: 0
+    right: 0
+    padding: $borderWidth
+
+  &__selected-flag
+    z-index: 1
+    position: relative
+    display: flex
+    align-items: center
+    height: 100%
+    padding: 0 $arrowPadding 0 $flagPadding
+
+  &__arrow
+    margin-left: $arrowPadding
+    width: 0
+    height: 0
+    border-left: $triangleBorder solid transparent
+    border-right: $triangleBorder solid transparent
+    border-top: $arrowHeight solid $arrowColor
+
+    &--up
+      border-top: none
+      border-bottom: $arrowHeight solid $arrowColor
+
+  &__country-list
+    position: absolute
+    z-index: 2
+    list-style: none
+    text-align: left
+    &--dropup
+      bottom: 100%
+      margin-bottom: (-$borderWidth)
+
+    padding: 0
+    margin: 0 0 0 (-$borderWidth)
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.2)
+    background-color: white
+    border: $borderWidth solid $greyBorder
+    white-space: nowrap
+    @media (max-width: 500px)
+      white-space: normal
+    max-height: 200px
+    overflow-y: scroll
+    -webkit-overflow-scrolling: touch
+  &__flag-box
+    display: inline-block
+    width: $flagWidth
+  &__divider
+    padding-bottom: 5px
+    margin-bottom: 5px
+    border-bottom: $borderWidth solid $greyBorder
+  &__country
+    padding: 5px 10px
+    outline: none
+  &__dial-code
+    color: $greyText
+  &__country.iti__highlight
+    background-color: $hoverColor
+  &__flag-box, &__country-name, &__dial-code
+    vertical-align: middle
+  &__flag-box, &__country-name
+    margin-right: 6px
+  &--allow-dropdown, &--separate-dial-code
+    input, input[type=text], input[type=tel]
+      padding-right: $inputPadding
+      padding-left: $selectedFlagArrowWidth + $inputPadding
+      margin-left: 0
+    .iti__flag-container
+      right: auto
+      left: 0
+  &--allow-dropdown
+    .iti__flag-container:hover
+      cursor: pointer
+      .iti__selected-flag
+        background-color: $hoverColor
+    input[disabled] + .iti__flag-container:hover,
+    input[readonly] + .iti__flag-container:hover
+      cursor: default
+      .iti__selected-flag
+        background-color: transparent
+  &--separate-dial-code
+    .iti__selected-flag
+      background-color: $hoverColor
+    .iti__selected-dial-code
+      margin-left: $arrowPadding
+  &--container
+    position: absolute
+    top: -1000px
+    left: -1000px
+    z-index: 1060
+    padding: $borderWidth
+    &:hover
+      cursor: pointer
+
+.iti-mobile .iti
+  &--container
+    top: $mobilePopupMargin
+    bottom: $mobilePopupMargin
+    left: $mobilePopupMargin
+    right: $mobilePopupMargin
+    position: fixed
+  &__country-list
+    max-height: 100%
+    width: 100%
+  &__country
+    padding: 10px 10px
+    line-height: 1.5em
+
+// @import "sprite"
+
+$countries: ('ad', 'ae', 'af', 'ag', 'ai', 'al', 'am', 'ao', 'aq', 'ar', 'as', 'at', 'au', 'aw', 'ax', 'az','ba', 'bb', 'bd', 'be', 'bf', 'bg', 'bh', 'bi', 'bj', 'bl', 'bm', 'bn', 'bo', 'bq', 'br', 'bs', 'bt', 'bv', 'bw', 'by', 'bz','ca', 'cc', 'cd', 'cf', 'cg', 'ch', 'ci', 'ck', 'cl', 'cm', 'cn', 'co', 'cr', 'cu', 'cv', 'cw', 'cx', 'cy', 'cz', 'de', 'dj', 'dk', 'dm', 'do', 'dz', 'ec', 'ee', 'eg', 'eh', 'er', 'es-ct', 'es-ga', 'es', 'et', 'eu', 'fi', 'fj', 'fk', 'fm', 'fo', 'fr', 'ga', 'gb-eng', 'gb-nir', 'gb-sct', 'gb-wls', 'gb', 'gd', 'ge', 'gf', 'gg', 'gh', 'gi', 'gl', 'gm', 'gn', 'gp', 'gq', 'gr', 'gs', 'gt', 'gu', 'gw', 'gy', 'hk', 'hm', 'hn', 'hr', 'ht', 'hu', 'id', 'ie', 'il', 'im', 'in', 'io', 'iq', 'ir', 'is', 'it', 'je', 'jm', 'jo', 'jp', 'ke', 'kg', 'kh', 'ki', 'km', 'kn', 'kp', 'kr', 'kw', 'ky', 'kz', 'la', 'lb', 'lc', 'li', 'lk', 'lr', 'ls', 'lt', 'lu', 'lv', 'ly', 'ma', 'mc', 'md', 'me', 'mf', 'mg', 'mh', 'mk', 'ml', 'mm', 'mn', 'mo', 'mp', 'mq', 'mr', 'ms', 'mt', 'mu', 'mv', 'mw', 'mx', 'my', 'mz', 'na', 'nc', 'ne', 'nf', 'ng', 'ni', 'nl', 'no', 'np', 'nr', 'nu', 'nz', 'om', 'pa', 'pe', 'pf', 'pg', 'ph', 'pk', 'pl', 'pm', 'pn', 'pr', 'ps', 'pt', 'pw', 'py', 'qa', 're', 'ro', 'rs', 'ru', 'rw', 'sa', 'sb', 'sc', 'sd', 'se', 'sg', 'sh', 'si', 'sj', 'sk', 'sl', 'sm', 'sn', 'so', 'sr', 'ss', 'st', 'sv', 'sx', 'sy', 'sz', 'tc', 'td', 'tf', 'tg', 'th', 'tj', 'tk', 'tl', 'tm', 'tn', 'to', 'tr', 'tt', 'tv', 'tw', 'tz', 'ua', 'ug', 'um', 'un', 'us', 'uy', 'uz', 'va', 'vc', 've', 'vg', 'vi', 'vn', 'vu', 'wf', 'ws', 'xk', 'ye', 'yt', 'za', 'zm', 'zw')
+.iti__flag
+  @include only-width(32px)
+  @include only-height(32px)
+  border-radius: 50%
+  @each $country in $countries
+    &.iti__#{$country}
+      background-image: url('../images/flags/#{$country}.svg')
+  background-repeat: no-repeat
+  background-size: cover
+  background-position: center

@@ -2,6 +2,7 @@ import '../sass/app.sass';
 import 'jquery';
 import 'bootstrap/dist/js/bootstrap.min';
 import 'owl.carousel';
+import intlTelInput from 'intl-tel-input';
 
 const getPriceByMonth = (month) => {
   const PriceTypes = { base: 4990, pro: 12500 };
@@ -140,4 +141,45 @@ $(document).ready(() => {
   $('.integrations-carousel#second').owlCarousel(integrations_carousel_config);
   delete integrations_carousel_config.rtl;
   $('.integrations-carousel#third').owlCarousel(integrations_carousel_config);
+  const input = document.querySelector('#contact_phone');
+  intlTelInput(input, {
+    autoHideDialCode: false,
+    initialCountry: 'ru',
+    nationalMode: false,
+    separateDialCode: true,
+    formatOnDisplay: true,
+    geoIpLookup: 'auto',
+    autoPlaceholder: true,
+    utilsScript: 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.14/js/utils.js',
+    // any initialisation options go here
+  });
+  $(phoneFormatter);
 });
+
+// eslint-disable-next-line no-unused-vars
+function phoneFormatter() {
+  $('#contact_phone').on('input', function() {
+    let number = $(this).val().replace(/[^\d]/g, '');
+    // eslint-disable-next-line eqeqeq
+    if (number.length === 7) {
+      number = number.replace(/(\d{3})(\d{4})/, '$1-$2');
+      // US & Canada Formatting
+      // eslint-disable-next-line eqeqeq
+    } else if (number.length === 10) {
+      number = number.replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3');
+      // eslint-disable-next-line brace-style
+    }
+    // France Formatting
+    // eslint-disable-next-line eqeqeq
+    else if (number.length === 11) {
+      number = number.replace(/(\d{2})(\d{1})(\d{2})(\d{2})(\d{2})(\d{2})/, '+$1 $2 $3 $4 $5 $6');
+      // eslint-disable-next-line brace-style
+    }
+    // German Formattiing
+    // eslint-disable-next-line eqeqeq
+    else if (number.length === 13) {
+      number = number.replace(/(\d{2})(\d{3})(\d{8})/, '+$1 $2 $3');
+    }
+    $(this).val(number);
+  });
+}

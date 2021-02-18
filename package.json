@@ -28,6 +28,7 @@
     "html-loader": "^1.3.2",
     "html-webpack-pug-plugin": "^2.0.1",
     "html-webpack-template-pug": "^1.1.1",
+    "intl-tel-input": "^17.0.12",
     "jquery": "^3.5.1",
     "normalize.scss": "^0.1.0",
     "owl.carousel": "^2.3.4",
