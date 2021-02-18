@@ -1,0 +1,214 @@
+.footer
+  width: 100%
+  height: auto
+  background: linear-gradient(105.63deg, #333335 -2.41%, #232325 99.43%)
+  &__inner
+    padding-top: 60px
+    @media (min-width: 768px)
+      padding-bottom: 30px
+    @media (max-width: 767px)
+      padding-bottom: 60px
+  &__top
+    display: flex
+    align-items: flex-start
+    @media (max-width: 767px)
+      flex-wrap: wrap
+  &-logo
+    display: flex
+    align-items: center
+    @media (max-width: 767px)
+      display: none
+    &::before
+      content: ''
+      display: block
+      background: url('../images/design/logotype.png') no-repeat center
+      background-size: cover
+      border-radius: 10px
+      @media (min-width: 1200px)
+        @include only-width(73px)
+        @include only-height(73px)
+        margin-right: 16px
+      @media (max-width: 1199px)
+        @include only-width(60px)
+        @include only-height(60px)
+    span
+      max-width: 99px
+      font-style: normal
+      font-weight: 350
+      font-size: 16px
+      line-height: 19px
+      color: #FFFFFF
+      @media (max-width: 1199px)
+        display: none
+  &-menu
+    list-style-type: none
+    padding: 0
+    margin: 0
+    &:not(:last-child)
+      @media (min-width: 1200px)
+        margin-right: 98px
+      @media (max-width: 1199px) and (min-width: 768px)
+        margin-right: 112px
+    &:last-child
+      @media (max-width: 767px)
+        padding-right: 30px
+        margin-left: auto
+    &__item
+      &:not(:last-child)
+        @media (min-width: 1200px)
+          margin-bottom: 30px
+        @media (max-width: 1199px) and (min-width: 768px)
+          margin-bottom: 32px
+        @media (max-width: 767px)
+          margin-bottom: 24px
+    &__link
+      display: block
+      font-style: normal
+      color: #FFFFFF
+      @media (min-width: 1200px)
+        font-weight: 500
+        font-size: 16px
+        line-height: 20px
+      @media (max-width: 1199px)
+        font-weight: 350
+        font-size: 14px
+        line-height: 16px
+    &-row
+      display: flex
+      align-items: flex-start
+      @media (min-width: 1200px)
+        margin-left: 119px
+      @media (max-width: 1199px) and (min-width: 768px)
+        margin-left: 46px
+      @media (max-width: 767px)
+        flex-basis: 100%
+  &-contact
+    @media (min-width: 768px)
+      margin-left: auto
+    @media (max-width: 767px)
+      flex-basis: 50%
+      margin-top: 60px
+    &__header
+      font-style: normal
+      font-weight: 500
+      color: #ffffff
+      @media (min-width: 1200px)
+        font-size: 16px
+        line-height: 20px
+      @media (max-width: 1199px) and (min-width: 768px)
+        font-size: 18px
+        line-height: 22px
+      @media (max-width: 767px)
+        font-size: 16px
+        line-height: 20px
+    &__items
+      display: flex
+      flex-direction: column
+      align-items: flex-start
+      justify-content: flex-start
+      @media (min-width: 1200px)
+        margin-top: 30px
+      @media (max-width: 1199px) and (min-width: 768px)
+        margin-top: 32px
+      @media (max-width: 767px)
+        margin-top: 24px
+    &__item
+      display: flex
+      align-items: center
+      &:not(:last-child)
+        @media (min-width: 1200px)
+          margin-bottom: 30px
+        @media (max-width: 1199px) and (min-width: 768px)
+          margin-bottom: 24px
+        @media (max-width: 767px)
+          margin-bottom: 16px
+      &::before
+        content: ''
+        display: block
+        @media (min-width: 768px)
+          @include only-width(20px)
+          @include only-height(20px)
+          margin-right: 10px
+        @media (max-width: 767px)
+          margin-right: 6px
+          @include only-width(16px)
+          @include only-height(16px)
+          background-size: contain !important
+      span
+        font-style: normal
+        font-weight: 500
+        @media (min-width: 1200px)
+          font-size: 16px
+          line-height: 20px
+        @media (max-width: 1199px) and (min-width: 768px)
+          font-size: 14px
+          line-height: 17px
+        @media (max-width: 767px)
+          font-size: 12px
+          line-height: 14px
+        color: #ffffff
+    &--phone
+      &::before
+        background: url('../images/design/footer/phone.png') no-repeat center
+    &--mail
+      &::before
+        background: url('../images/design/footer/email.png') no-repeat center
+  &-divider
+    display: block
+    width: 100%
+    border: 1px solid rgba(255, 255, 255, 0.2)
+    @media (min-width: 1200px)
+      margin-top: 30px
+    @media (max-width: 1199px) and (min-width: 768px)
+      margin-top: 24px
+    @media (max-width: 767px)
+      margin-top: 32px
+  &-bottom
+    display: flex
+    align-items: center
+    justify-content: space-between
+    @media (min-width: 1200px)
+      margin-top: 28px
+    @media (max-width: 1199px)
+      margin-top: 32px
+  &-copyright
+    font-style: normal
+    font-weight: 350
+    font-size: 14px
+    line-height: 16px
+    color: #FFFFFF
+  &-socials
+    display: flex
+    @media (min-width: 768px)
+      align-items: center
+    @media (max-width: 767px)
+      flex-wrap: wrap
+      max-width: 98px
+      margin-left: auto
+      margin-top: 60px
+    &__item
+      @media (min-width: 768px)
+        @include only-width(36px)
+        @include only-height(36px)
+      @media (max-width: 767px)
+        @include only-width(40px)
+        @include only-height(40px)
+        background-size: contain !important
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.1)
+      &:not(:last-child)
+        @media (min-width: 768px)
+          margin-right: 24px
+      &:not(&:nth-child(2n))
+        @media (max-width: 767px)
+          margin-right: 16px
+      &:nth-child(1), &:nth-child(2)
+        @media (max-width: 767px)
+          margin-bottom: 16px
+    &--instagram
+      background: url('../images/design/footer/instagram.png') no-repeat center
+    &--facebook
+      background: url('../images/design/footer/facebook.png') no-repeat center
+    &--vk
+      background: url('../images/design/footer/vk.png') no-repeat center
+    &--youtube
+      background: url('../images/design/footer/youtube.png') no-repeat center

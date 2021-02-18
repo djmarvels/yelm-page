@@ -22,3 +22,41 @@ html(lang='en')
             button.navbar-toggler
                 span
         block content
+        .footer
+            .container
+                .row
+                    .col.col-12.footer__inner
+                        .footer__top
+                            .footer-logo
+                                span Конструктор мобильных приложений
+                            .footer-menu-row
+                                - const first_menu = [{ text: 'О нас', link: '#!' }, { text: 'Кейсы', link: '#!' }, { text: 'Возможности', link: '#!' }, { text: 'Интеграции', link: '#!' }]
+                                - const second_menu = [{ text: 'Блог', link: '#!' }, { text: 'Цены', link: '#!' }, { text: 'F.A.Q', link: '#!' }, { text: 'Контакты', link: '#!' }]
+                                ul.footer-menu
+                                    each item in first_menu
+                                        li.footer-menu__item
+                                            a(href=item.link).footer-menu__link=item.text
+                                ul.footer-menu
+                                    each item in second_menu
+                                        li.footer-menu__item
+                                            a(href=item.link).footer-menu__link=item.text
+                            .footer-contact
+                                .footer-contact__header Связь с нами
+                                .footer-contact__items
+                                    a.footer-contact__item.footer-contact--phone
+                                        span +7 999 999 99 99
+                                    a.footer-contact__item.footer-contact--mail
+                                        span admin@yelm.io
+                            .footer-socials.only--sm
+                                a(href="#!").footer-socials__item.footer-socials--instagram
+                                a(href="#!").footer-socials__item.footer-socials--youtube
+                                a(href="#!").footer-socials__item.footer-socials--vk
+                                a(href="#!").footer-socials__item.footer-socials--facebook
+                        .footer-divider
+                        .footer-bottom
+                            .footer-copyright 2021 Yelm. Все права защищены
+                            .footer-socials.only--md
+                                a(href="#!").footer-socials__item.footer-socials--instagram
+                                a(href="#!").footer-socials__item.footer-socials--youtube
+                                a(href="#!").footer-socials__item.footer-socials--vk
+                                a(href="#!").footer-socials__item.footer-socials--facebook
