@@ -50,6 +50,45 @@ const generateMonth = () => {
   });
 };
 
+const showOnlyPlan = (plan) => {
+  $('.plans-box').each((index, element) => {
+    // eslint-disable-next-line camelcase
+    const inner_plan = $(element).attr('box');
+    // eslint-disable-next-line camelcase
+    if (inner_plan !== plan) {
+      $(element).addClass('hide');
+    } else {
+      $(element).removeClass('hide');
+    }
+  });
+};
+
+$('#plans_switch').on('change', () => {
+  window.select_plan = $('#plans_switch').is(':checked') ? 'pro' : 'base';
+  showOnlyPlan(window.select_plan);
+});
+
+const showAllPlans = () => {
+  $('.plans-box').each((index, element) => {
+    $(element).removeClass('hide');
+  });
+};
+
+const resizePlans = () => {
+  // eslint-disable-next-line no-console
+  if (window.innerWidth < 768 && typeof window.select_plan === 'undefined') {
+    window.select_plan = $('#plans_switch').is(':checked') ? 'pro' : 'base';
+    showOnlyPlan(window.select_plan);
+  } else if (window.innerWidth >= 768 && typeof window.select_plan !== 'undefined') {
+    showAllPlans();
+    delete window.select_plan;
+  }
+};
+
+$(window).on('resize', () => {
+  resizePlans();
+});
+
 $('body').on('click', '[data-month]', (event) => {
   // eslint-disable-next-line radix
   if (event.target.tagName === 'BUTTON') {
@@ -62,6 +101,7 @@ $('body').on('click', '[data-month]', (event) => {
 $(document).ready(() => {
   window.select_month = 3;
   generateMonth();
+  resizePlans();
   $('.cases-carousel').owlCarousel({
     margin: 20,
     nav: true,
