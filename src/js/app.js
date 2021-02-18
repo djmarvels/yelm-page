@@ -159,26 +159,36 @@ const phoneMask = () => {
     initialCountry: 'ru',
     // nationalMode: false,
     separateDialCode: false,
-    formatOnDisplay: true,
+    formatOnDisplay: false,
     // geoIpLookup: 'auto',
     utilsScript: 'https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.14/js/utils.js',
-    autoPlaceholder: 'aggressive',
-    placeholderNumberType: 'MOBILE',
+    // autoPlaceholder: 'aggressive',
+    // placeholderNumberType: 'MOBILE',
     // eslint-disable-next-line camelcase
     customPlaceholder: (country_placeholder, country_code) => {
-      if (Object.keys(country_code).length) {
-        const Regulated = new RegExp(`^[0-9]{${country_code.dialCode.length}}`);
-        // eslint-disable-next-line no-param-reassign,camelcase
-        country_placeholder = country_placeholder.replace(Regulated, `+ ${country_code.dialCode}`);
+      // eslint-disable-next-line camelcase
+      window.country_code = country_code.iso2;
+      switch (window.country_code) {
+        case 'ru': {
+          window.input_mask = '8 (999) 999-99-99';
+          break;
+        }
+        default: {
+          window.input_mask = 'remove';
+          break;
+        }
       }
       // eslint-disable-next-line camelcase
       return country_placeholder;
     },
   });
-  setTimeout(() => (input_phone.mask(input_phone.attr('placeholder').replace(new RegExp('[0-9]', 'g'), 9))), 100);
+  setTimeout(() => (input_phone.mask(window.input_mask)), 100);
   input_phone.on('countrychange', () => {
-    setTimeout(() => (input_phone.val('')), 50);
-    setTimeout(() => (input_phone.mask(input_phone.attr('placeholder').replace(new RegExp('[0-9]', 'g'), 9))), 100);
-    setTimeout(() => (input_phone.val('')), 150);
+    if (window.input_mask === 'remove') {
+      input_phone.unmask();
+      setTimeout(() => (input_phone.val('')), 50);
+    } else {
+      input_phone.mask(window.input_mask);
+    }
   });
 };

@@ -10,7 +10,21 @@
             .col.col-12.col-lg-7
                 .contact-form
                     .contact-form-group
-                        input#contact_phone
+                        input(name="name", placeholder="Ваше имя", type="text")
+                    .contact-form-group
+                        input#contact_phone(name="phone")
+                    .contact-form-group
+                        input(name="email", placeholder="E-mail", type="text")
+                    .contact-form-group
+                        textarea(name="question", placeholder="Ваш вопрос")
+                    .contact-form-group.contact-form-group--checkbox
+                        input#agree(type="checkbox", name="agree")
+                        label(for="agree")
+                            span Я ознакомлен и согласен с условиями
+                                a(href="/terms") пользовательского соглашения
+                    .contact-form-group
+                        .button.button--gradient_colors
+                            span Оставить заявку
             .col.col-12.col-lg-5
                 .contact-right
                     .content-right-circle

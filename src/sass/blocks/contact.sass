@@ -23,3 +23,91 @@
     color: #333333
   &-form
     margin-top: 50px
+    &-group
+      &:not(:last-child)
+        margin-bottom: 16px
+      &:nth-child(4)
+        margin-bottom: 30px
+      &:nth-child(5)
+        margin-bottom: 50px
+      .button
+        @include only-width(300px)
+        @include only-height(60px)
+      input
+        &:not(#contact_phone)
+          &[type="text"]
+            padding: 14px 16px
+            height: auto
+            border: 1px solid #bdbdbd
+            border-radius: 10px
+            outline: none
+            font-style: normal
+            font-weight: 350
+            font-size: 16px
+            line-height: 20px
+            color: #333
+            display: block
+            width: 100%
+            &::placeholder
+              color: #BDBDBD
+          &[type="checkbox"]
+            position: absolute
+            display: none
+            & + label
+              position: relative
+              cursor: pointer
+              padding: 0
+              display: flex
+              align-items: center
+              &:before
+                content: ''
+                margin-right: 10px
+                display: block
+                vertical-align: text-top
+                @include only-width(24px)
+                @include only-height(24px)
+                border: 1px solid #BDBDBD
+                border-radius: 5px
+                background: white
+              &::after
+                content: ''
+                display: block
+                position: absolute
+                background: url('../images/design/check.png') no-repeat center top
+                @include only-width(24px)
+                @include only-height(24px)
+                top: 9px
+                opacity: 0
+                transition: opacity 350ms
+              span
+                display: inline-block
+                vertical-align: bottom
+                font-style: normal
+                font-weight: 350
+                font-size: 14px
+                line-height: 120%
+                color: $black
+                a
+                  display: block
+                  color: $blue
+                  text-decoration: underline
+            &:checked
+              & + label
+                &::after
+                  opacity: 1
+      textarea
+        padding: 14px 16px
+        height: auto
+        border: 1px solid #bdbdbd
+        border-radius: 10px
+        outline: none
+        font-style: normal
+        font-weight: 350
+        font-size: 16px
+        line-height: 20px
+        color: #333
+        display: block
+        width: 100%
+        &::placeholder
+          color: #BDBDBD
+
