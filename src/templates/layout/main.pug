@@ -6,13 +6,13 @@ html(lang='en')
         title Yelm
     body
         .navbar.navbar--fixed.navbar--backdrop
-            a.navbar-brand(href="#!")
+            a.navbar-brand(href="#!", data-position="Главная")
                 span.text.text--black.text--medium Конструктор мобильных приложений
             - const navbar_items = [ 'О нас', 'Кейсы', 'Возможности', 'Интеграции', 'Блог', 'Цены', 'F.A.Q', 'Контакты' ];
             ul.navbar-menu
                 each navbar_item in navbar_items
                     li.navbar-menu__item
-                        a(href="#!").navbar-menu__link.text.text--black.text--medium=navbar_item
+                        a(href="#!", data-position=""+navbar_item+"").navbar-menu__link.text.text--black.text--medium=navbar_item
             .navbar-actions
                 a(href="#!").navbar-actions__link.text.text--black.text--medium.view--lg  Войти
                 a(href="#!").button.button--gradient_border.view--lg
@@ -27,7 +27,7 @@ html(lang='en')
                 .row
                     .col.col-12.footer__inner
                         .footer__top
-                            .footer-logo
+                            a(href="#!", data-position="Главная").footer-logo
                                 span Конструктор мобильных приложений
                             .footer-menu-row
                                 - const first_menu = [{ text: 'О нас', link: '#!' }, { text: 'Кейсы', link: '#!' }, { text: 'Возможности', link: '#!' }, { text: 'Интеграции', link: '#!' }]
@@ -35,16 +35,16 @@ html(lang='en')
                                 ul.footer-menu
                                     each item in first_menu
                                         li.footer-menu__item
-                                            a(href=item.link).footer-menu__link=item.text
+                                            a(href=item.link, data-position=""+item.text+"").footer-menu__link=item.text
                                 ul.footer-menu
                                     each item in second_menu
                                         li.footer-menu__item
-                                            a(href=item.link).footer-menu__link=item.text
+                                            a(href=item.link, data-position=""+item.text+"").footer-menu__link=item.text
                             .footer-contact
                                 .footer-contact__header Связь с нами
                                 .footer-contact__items
-                                    a.footer-contact__item.footer-contact--phone
-                                        span +7 999 999 99 99
+                                    a(href="tel:79851217753").footer-contact__item.footer-contact--phone
+                                        span +7 985 121-77-53
                                     a.footer-contact__item.footer-contact--mail
                                         span admin@yelm.io
                             .footer-socials.only--sm

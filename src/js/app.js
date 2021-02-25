@@ -6,6 +6,29 @@ import 'jquery.maskedinput/src/jquery.maskedinput';
 // eslint-disable-next-line no-unused-vars
 const intlTelInput = require('intl-tel-input');
 
+jQuery('body').on('click', '[data-position]', (e) => {
+  const position = jQuery(e.target).attr('data-position');
+  const positions = [
+    { name: 'Главная', class: '.first-screen' },
+    { name: 'О нас', class: '.second-circle__breadcrumbs' },
+    { name: 'Кейсы', class: '.cases' },
+    { name: 'Возможности', class: '.functions .functions-breadcrumbs' },
+    { name: 'Интеграции', class: '.integrations .functions-breadcrumbs' },
+    { name: 'Блог', class: '.blog .functions-breadcrumbs' },
+    { name: 'Цены', class: '.plans-breadcrumbs' },
+    { name: 'F.A.Q', class: '.faq .plans-breadcrumbs' },
+    { name: 'Контакты', class: '.contact .plans-breadcrumbs' },
+  ];
+  const findPos = positions.find((pos) => (pos.name === position));
+  if (typeof findPos !== 'undefined') {
+    let posOffset = jQuery(findPos.class).offset().top;
+    posOffset -= jQuery('.navbar').height() + 50;
+    jQuery('html, body').animate({
+      scrollTop: posOffset,
+    });
+  }
+});
+
 const getPriceByMonth = (month) => {
   const PriceTypes = { base: 4990, pro: 12500 };
   // eslint-disable-next-line no-nested-ternary
